@@ -884,25 +884,58 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
         </div>
       </div>
       <div class="cov-vis reveal">
-        <svg class="map-svg" viewBox="0 0 280 460" xmlns="http://www.w3.org/2000/svg" aria-label="Israel coverage map">
-          <defs><linearGradient id="mapg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e90b0" stop-opacity=".3"/><stop offset="100%" stop-color="#1a5fb4" stop-opacity=".15"/></linearGradient></defs>
-          <!-- Stylized Israel outline -->
-          <path d="M 130 20 L 165 28 L 175 60 L 195 85 L 205 130 L 200 175 L 215 220 L 225 270 L 215 320 L 195 360 L 170 395 L 145 425 L 120 440 L 100 425 L 85 380 L 95 340 L 80 300 L 65 250 L 60 200 L 70 155 L 95 110 L 110 75 L 125 45 z" fill="url(#mapg)" stroke="#7dd4e8" stroke-width="1.5" opacity=".9"/>
-          <!-- City dots with pulse on PT -->
+        <svg class="map-svg" viewBox="0 0 240 480" xmlns="http://www.w3.org/2000/svg" aria-label="Israel coverage map">
+          <defs>
+            <linearGradient id="mapg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e90b0" stop-opacity=".35"/><stop offset="100%" stop-color="#1a5fb4" stop-opacity=".15"/></linearGradient>
+            <linearGradient id="seag" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0a1628" stop-opacity="0"/><stop offset="100%" stop-color="#1e90b0" stop-opacity=".18"/></linearGradient>
+          </defs>
+          <!-- Mediterranean Sea wash (left of coast) -->
+          <rect x="0" y="0" width="100" height="280" fill="url(#seag)"/>
+          <!-- Israel outline: Galilee panhandle → Golan → Jordan border → Dead Sea indent → Arava → Eilat point → Egypt border → Mediterranean coast → Lebanon border -->
+          <path d="
+            M 184 26
+            L 192 24 L 200 30 L 207 44 L 210 62
+            L 198 80 L 184 102
+            L 178 140 L 180 168 L 182 196
+            L 176 222 L 170 252 L 164 280
+            L 152 318 L 138 360 L 124 408
+            L 117 438 L 113 452 L 109 446
+            L 100 422 L 86 388 L 70 348 L 55 308
+            L 46 270 L 42 244
+            L 56 226 L 72 210 L 84 192 L 92 168
+            L 100 142 L 108 116 L 118 92
+            L 130 70 L 132 56 L 132 46
+            L 138 42 L 154 44 L 168 36
+            L 178 30 Z
+          " fill="url(#mapg)" stroke="#7dd4e8" stroke-width="1.5" stroke-linejoin="round" opacity=".95"/>
+          <!-- Sea of Galilee (Kinneret) -->
+          <ellipse cx="186" cy="115" rx="6" ry="9" fill="#1e90b0" opacity=".55"/>
+          <!-- Dead Sea -->
+          <ellipse cx="178" cy="240" rx="5" ry="22" fill="#1e90b0" opacity=".55"/>
+
+          <!-- City dots: positions from real lat/lng mapped into viewBox -->
+          <!-- Petah Tikva (HQ, animated pulse) -->
           <g>
-            <circle class="cdot main" cx="125" cy="245" r="9"><animate attributeName="r" values="9;13;9" dur="2s" repeatCount="indefinite"/></circle>
-            <circle class="cdot main" cx="125" cy="245" r="5"/>
-            <text x="142" y="249" font-size="11" fill="#f5b800" font-weight="700">Petah Tikva</text>
+            <circle class="cdot main" cx="108" cy="162" r="9"><animate attributeName="r" values="9;14;9" dur="2s" repeatCount="indefinite"/></circle>
+            <circle class="cdot main" cx="108" cy="162" r="5"/>
+            <text x="119" y="160" font-size="11" fill="#f5b800" font-weight="700">Petah Tikva</text>
           </g>
-          <circle class="cdot" cx="105" cy="252" r="3.5"/><text x="58" y="256" font-size="9" fill="#c5d9ec">Tel Aviv</text>
-          <circle class="cdot" cx="115" cy="240" r="3"/><text x="73" y="232" font-size="9" fill="#c5d9ec">Ramat Gan</text>
-          <circle class="cdot" cx="105" cy="278" r="3"/><text x="60" y="282" font-size="9" fill="#c5d9ec">Holon</text>
-          <circle class="cdot" cx="100" cy="295" r="3"/><text x="35" y="299" font-size="9" fill="#c5d9ec">Rishon</text>
-          <circle class="cdot" cx="120" cy="195" r="3"/><text x="83" y="199" font-size="9" fill="#c5d9ec">Netanya</text>
-          <circle class="cdot" cx="115" cy="225" r="3"/><text x="78" y="218" font-size="9" fill="#c5d9ec">Herzliya</text>
-          <circle class="cdot" cx="170" cy="280" r="3"/><text x="178" y="284" font-size="9" fill="#c5d9ec">Jerusalem</text>
-          <circle class="cdot" cx="135" cy="100" r="3"/><text x="148" y="104" font-size="9" fill="#c5d9ec">Haifa</text>
-          <circle class="cdot" cx="120" cy="380" r="3"/><text x="130" y="384" font-size="9" fill="#c5d9ec">Beer Sheva</text>
+          <!-- North -->
+          <circle class="cdot" cx="119" cy="81" r="3"/><text x="127" y="84" font-size="9" fill="#c5d9ec">Haifa</text>
+          <!-- Sharon coast -->
+          <circle class="cdot" cx="105" cy="135" r="3"/><text x="113" y="132" font-size="9" fill="#c5d9ec">Netanya</text>
+          <circle class="cdot" cx="110" cy="152" r="3"/><text x="118" y="149" font-size="9" fill="#c5d9ec">Kfar Saba</text>
+          <circle class="cdot" cx="102" cy="154" r="2.5"/><text x="62" y="148" font-size="9" fill="#c5d9ec">Herzliya</text>
+          <!-- Gush Dan (cluster — labels stacked west of dots) -->
+          <circle class="cdot" cx="96" cy="163" r="2.5"/><text x="62" y="166" font-size="9" fill="#c5d9ec">Tel Aviv</text>
+          <circle class="cdot" cx="100" cy="164" r="2.5"/><text x="50" y="176" font-size="9" fill="#c5d9ec">Ramat Gan</text>
+          <circle class="cdot" cx="96" cy="171" r="2.5"/><text x="68" y="186" font-size="9" fill="#c5d9ec">Holon</text>
+          <circle class="cdot" cx="98" cy="176" r="2.5"/><text x="58" y="196" font-size="9" fill="#c5d9ec">Rishon LeZion</text>
+          <!-- Jerusalem -->
+          <circle class="cdot" cx="144" cy="197" r="3"/><text x="152" y="200" font-size="9" fill="#c5d9ec">Jerusalem</text>
+          <!-- South -->
+          <circle class="cdot" cx="97" cy="257" r="3"/><text x="105" y="260" font-size="9" fill="#c5d9ec">Beer Sheva</text>
+          <circle class="cdot" cx="113" cy="445" r="3"/><text x="121" y="448" font-size="9" fill="#c5d9ec">Eilat</text>
         </svg>
       </div>
     </div>
