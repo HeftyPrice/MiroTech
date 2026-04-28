@@ -954,6 +954,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
     <div class="ccards">
       <div class="cc reveal"><div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.07 15.07 0 0 1-6.59-6.58l2.2-2.2a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg></div><h4 class="h">טלפון</h4><h4 class="e">Phone</h4><a href="tel:+972545201773"><span class="pnum-big">054-520-1773</span></a></div>
       <div class="cc reveal"><div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg></div><h4>WhatsApp</h4><a href="https://wa.me/972545201773">054-520-1773</a></div>
+      <div class="cc reveal"><div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></div><h4 class="h">אימייל</h4><h4 class="e">Email</h4><a href="mailto:xmoto1000@gmail.com" style="font-size:.88rem;word-break:break-all;">xmoto1000@gmail.com</a></div>
       <div class="cc reveal"><div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></div><h4 class="h">מיקום</h4><h4 class="e">Location</h4><span style="color:var(--muted);font-size:.88rem;" class="h">פתח תקווה<br/>וכל הארץ</span><span style="color:var(--muted);font-size:.88rem;" class="e">Petah Tikva<br/>& All Israel</span></div>
       <div class="cc reveal"><div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M12 8 v 4 l 3 3 m 5-3 a 8 8 0 1 1 -16 0 8 8 0 0 1 16 0z" stroke="currentColor" stroke-width="2" fill="none"/></svg></div><h4 class="h">זמינות</h4><h4 class="e">Availability</h4><span style="color:var(--muted);font-size:.88rem;" class="h">24/7<br/>חירום בכל שעה</span><span style="color:var(--muted);font-size:.88rem;" class="e">24/7<br/>Emergency anytime</span></div>
     </div>
@@ -1067,6 +1068,9 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 "use strict";
 
 const PHONE = "972545201773";
+const OWNER_EMAIL = "xmoto1000@gmail.com";
+// TODO: replace with Google Appointment Schedules booking URL once set up
+const BOOKING_URL = "";
 const isHe = () => !document.body.classList.contains("en");
 const t = (he, en) => isHe() ? he : en;
 
@@ -1230,16 +1234,49 @@ function apHandle(text){
 }
 function apFinish(){
   const summary = isHe()
-    ? `מצוין! לסיכום:\n• שם: ${A.name}\n• בעיה: ${A.issue}\n• כתובת: ${A.address}\n• מועד: ${A.date}\n• טלפון: ${A.phone}\n\nעכשיו אשלח את ההודעה ל-WhatsApp לאישור סופי.`
-    : `Great! Summary:\n• Name: ${A.name}\n• Issue: ${A.issue}\n• Address: ${A.address}\n• When: ${A.date}\n• Phone: ${A.phone}\n\nI'll now send this to WhatsApp for final confirmation.`;
+    ? `מצוין! לסיכום:\n• שם: ${A.name}\n• בעיה: ${A.issue}\n• כתובת: ${A.address}\n• מועד: ${A.date}\n• טלפון: ${A.phone}\n\nבחר איך לשלוח את הבקשה:`
+    : `Great! Summary:\n• Name: ${A.name}\n• Issue: ${A.issue}\n• Address: ${A.address}\n• When: ${A.date}\n• Phone: ${A.phone}\n\nChoose how to send the request:`;
   apAdd(summary, "bot");
-  const msg = isHe()
+
+  const waMsg = isHe()
     ? `שלום, רוצה לקבוע תור:\n\n• שם: ${A.name}\n• בעיה: ${A.issue}\n• כתובת: ${A.address}\n• מועד: ${A.date}\n• טלפון: ${A.phone}`
     : `Hi, I'd like to book:\n\n• Name: ${A.name}\n• Issue: ${A.issue}\n• Address: ${A.address}\n• When: ${A.date}\n• Phone: ${A.phone}`;
-  apQuick([isHe() ? "📲 שלח ל-WhatsApp" : "📲 Send to WhatsApp", isHe() ? "🔄 מהתחלה" : "🔄 Restart"], (val) => {
-    if(val.includes("WhatsApp") || val.includes("שלח")){
-      window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
-    } else {
+
+  const emailSubject = isHe() ? `בקשת תור — ${A.name}` : `Appointment request — ${A.name}`;
+  const emailBody = isHe()
+    ? `שלום,\n\nאני מעוניין/ת לקבוע תור לאיתור נזילה:\n\n• שם: ${A.name}\n• בעיה: ${A.issue}\n• כתובת: ${A.address}\n• מועד מבוקש: ${A.date}\n• טלפון לחזרה: ${A.phone}\n\nתודה!`
+    : `Hello,\n\nI'd like to book a leak detection appointment:\n\n• Name: ${A.name}\n• Issue: ${A.issue}\n• Address: ${A.address}\n• Preferred time: ${A.date}\n• Callback phone: ${A.phone}\n\nThank you!`;
+
+  const calTitle = isHe() ? `MiroTech — איתור נזילה (${A.name})` : `MiroTech leak detection (${A.name})`;
+  const calDetails = isHe()
+    ? `בעיה: ${A.issue}\nמועד מבוקש: ${A.date}\nטלפון לחזרה: ${A.phone}\n\nאשרו או דחו את ההזמנה כדי להגיב ללקוח.`
+    : `Issue: ${A.issue}\nPreferred time: ${A.date}\nCallback phone: ${A.phone}\n\nAccept or decline this invite to confirm with the client.`;
+
+  const waBtn  = isHe() ? "📲 WhatsApp"        : "📲 WhatsApp";
+  const emBtn  = isHe() ? "✉️ אימייל"           : "✉️ Email";
+  const calBtn = isHe() ? "📅 הוסף ליומן Google" : "📅 Add to Google Calendar";
+  const rsBtn  = isHe() ? "🔄 מהתחלה"           : "🔄 Restart";
+  const bookBtn = isHe() ? "🗓 הזמן זמן פנוי"   : "🗓 Book an open slot";
+
+  const opts = [waBtn, emBtn, calBtn];
+  if(BOOKING_URL) opts.push(bookBtn);
+  opts.push(rsBtn);
+
+  apQuick(opts, (val) => {
+    if(val === waBtn){
+      window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(waMsg)}`, "_blank");
+    } else if(val === emBtn){
+      window.location.href = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    } else if(val === calBtn){
+      const url = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+        + "&text="     + encodeURIComponent(calTitle)
+        + "&details="  + encodeURIComponent(calDetails)
+        + "&location=" + encodeURIComponent(A.address)
+        + "&add="      + encodeURIComponent(OWNER_EMAIL);
+      window.open(url, "_blank");
+    } else if(val === bookBtn && BOOKING_URL){
+      window.open(BOOKING_URL, "_blank");
+    } else if(val === rsBtn){
       Object.assign(A, { name:"", issue:"", address:"", date:"", phone:"", step:0 });
       document.getElementById("apMsgs").innerHTML = "";
       apAsk();
