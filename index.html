@@ -96,6 +96,34 @@ input,select,textarea{font-family:inherit;}
 /* ── reveal-on-scroll ── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
 .reveal.in{opacity:1;transform:translateY(0);}
+/* Staggered children — a wave reveal when a grid comes into view */
+.reveal-stagger > .reveal:nth-child(1){transition-delay:0s;}
+.reveal-stagger > .reveal:nth-child(2){transition-delay:.07s;}
+.reveal-stagger > .reveal:nth-child(3){transition-delay:.14s;}
+.reveal-stagger > .reveal:nth-child(4){transition-delay:.21s;}
+.reveal-stagger > .reveal:nth-child(5){transition-delay:.28s;}
+.reveal-stagger > .reveal:nth-child(6){transition-delay:.35s;}
+.reveal-stagger > .reveal:nth-child(7){transition-delay:.42s;}
+.reveal-stagger > .reveal:nth-child(8){transition-delay:.49s;}
+.reveal-stagger > .reveal:nth-child(n+9){transition-delay:.56s;}
+
+/* Hero entrance — staggered fade/slide on first paint */
+@keyframes heroIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.hero-text > *{animation:heroIn .7s ease both;}
+.hero-text > *:nth-child(1){animation-delay:.05s;}
+.hero-text > *:nth-child(2),.hero-text > *:nth-child(3){animation-delay:.18s;}
+.hero-text > *:nth-child(4),.hero-text > *:nth-child(5){animation-delay:.32s;}
+.hero-text > *:nth-child(6){animation-delay:.46s;}
+.hero-text > *:nth-child(7){animation-delay:.6s;}
+.hero-card{animation:heroIn .8s ease .38s both;}
+.hero-badge .hb-dot,.hero-badge .hb-sep{animation:none;}
+
+/* Global grain overlay — subtle film-grain atmosphere */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.1;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .42 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size:180px;
+}
 
 /* ── TOPBAR ── */
 .topbar{background:var(--navy3);color:#a8bed8;font-family:var(--font-m);font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:.4rem;border-bottom:1px solid rgba(125,212,232,.08);}
@@ -713,7 +741,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
       <p class="ssub h">אנו מתמחים במגוון רחב של בעיות תשתית — מנזילות מים סמויות ועד מיפוי צנרת מורכבת בבניינים מסחריים.</p>
       <p class="ssub e">We specialize in a wide range of infrastructure problems — from hidden water leaks to complex pipe mapping in commercial buildings.</p>
     </div>
-    <div class="sgrid">
+    <div class="sgrid reveal-stagger">
       <article class="scard reveal">
         <div class="scard-meta"><span class="code">SCAN</span><span class="num">/ 01</span></div>
         <div class="sico"><svg viewBox="0 0 24 24"><path d="M12 2 C 7 9 4 13.5 4 16.5 a 8 8 0 0 0 16 0 C 20 13.5 17 9 12 2zm0 16a4 4 0 0 1 -4-4h2 a 2 2 0 0 0 4 0 h2 a 4 4 0 0 1-4 4z"/></svg></div>
@@ -769,7 +797,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
       <p class="ssub h">משיחת הטלפון הראשונה ועד דוח מסירה — תהליך שקוף, מהיר ויסודי.</p>
       <p class="ssub e">From the first phone call to the final report — a transparent, fast and thorough process.</p>
     </div>
-    <div class="pgrid">
+    <div class="pgrid reveal-stagger">
       <div class="pstep reveal"><span class="pghost">01</span><span class="pnum"><span class="h">שלב</span><span class="e">Step</span> 01</span><h4 class="h">קביעת תור</h4><h4 class="e">Book</h4><p class="h">צרו קשר טלפונית או בטופס. נחזור אליכם תוך שעה לתאום מועד מתאים.</p><p class="e">Call us or fill in the form. We'll reply within an hour to schedule a visit.</p></div>
       <div class="pstep reveal"><span class="pghost">02</span><span class="pnum"><span class="h">שלב</span><span class="e">Step</span> 02</span><h4 class="h">בדיקה בשטח</h4><h4 class="e">Inspect</h4><p class="h">הגעה במועד עם ציוד מלא. סריקה אקוסטית, תרמוגרפית ואנדוסקופית.</p><p class="e">On-time arrival with full equipment. Acoustic, thermal and endoscopic scanning.</p></div>
       <div class="pstep reveal"><span class="pghost">03</span><span class="pnum"><span class="h">שלב</span><span class="e">Step</span> 03</span><h4 class="h">דוח מקצועי</h4><h4 class="e">Report</h4><p class="h">דוח כתוב עם מיקום מדויק, תמונות, סיבה והמלצות לתיקון — תוך 24 שעות.</p><p class="e">Written report with exact location, photos, cause and repair recommendations — within 24 hours.</p></div>
@@ -817,7 +845,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
       <p class="ssub h">דירוג ממוצע של 4.9 כוכבים מ-127 ביקורות אמיתיות.</p>
       <p class="ssub e">Average rating of 4.9 stars from 127 verified reviews.</p>
     </div>
-    <div class="tgrid">
+    <div class="tgrid reveal-stagger">
       <div class="tcard reveal">
         <div class="tquote">״</div>
         <div class="tstars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><span class="tverified"><span class="h">מאומת</span><span class="e">Verified</span></span></div>
@@ -852,7 +880,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
       <p class="ssub h">דוגמאות מסקרי איתור נזילות, תרמוגרפיה ומיפוי תשתיות בפרויקטים מגוונים.</p>
       <p class="ssub e">Examples from leak detection surveys, thermography and infrastructure mapping projects.</p>
     </div>
-    <div class="ggrid" id="ggrid">
+    <div class="ggrid reveal-stagger" id="ggrid">
       <div class="gitem hero reveal" tabindex="0" data-i="0"><span class="gid"></span><img src="images/gallery/hero-thermal-wall.jpg" alt="Thermographic leak detection on wall" loading="lazy"><div class="glabel"><span class="h">איתור נזילה תרמוגרפית בקיר</span><span class="e">Thermographic leak detection on wall</span></div></div>
       <div class="gitem reveal" tabindex="0" data-i="1"><span class="gid"></span><img src="images/gallery/thermal-hot-leak.jpg" alt="FLIR thermal hot water leak" loading="lazy"><div class="glabel"><span class="h">מצלמת חום FLIR — מים חמים</span><span class="e">FLIR thermal — hot water leak</span></div></div>
       <div class="gitem reveal" tabindex="0" data-i="2"><span class="gid"></span><img src="images/gallery/thermal-cold-leak.jpg" alt="FLIR thermal cold water leak" loading="lazy"><div class="glabel"><span class="h">מצלמת חום FLIR — מים קרים</span><span class="e">FLIR thermal — cold water leak</span></div></div>
@@ -887,7 +915,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
       <div class="section-meta"><span class="snum">06 / 09</span><span class="sep"></span><span class="stag h">שאלות נפוצות</span><span class="stag e">FAQ</span></div>
       <h2 class="stitle h">תשובות לשאלות הנפוצות ביותר</h2><h2 class="stitle e">Answers to Common Questions</h2>
     </div>
-    <div class="faq-list">
+    <div class="faq-list reveal-stagger">
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false"><span><span class="h">כמה זמן לוקח לאתר נזילה?</span><span class="e">How long does leak detection take?</span></span><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button>
         <div class="faq-a"><div class="faq-a-inner"><span class="h">בדרך כלל בין 30 דקות לשעתיים, תלוי במורכבות. ברוב המקרים אנחנו מאתרים את המקור באותה ביקור.</span><span class="e">Usually between 30 minutes and 2 hours, depending on complexity. In most cases we locate the source in the same visit.</span></div></div>
@@ -1056,7 +1084,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
       <p class="ssub h">צרו קשר בכל דרך שנוחה לכם — אנחנו זמינים 24/7.</p>
       <p class="ssub e">Reach out any way you prefer — we're available 24/7.</p>
     </div>
-    <div class="ccards">
+    <div class="ccards reveal-stagger">
       <div class="cc reveal"><div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.07 15.07 0 0 1-6.59-6.58l2.2-2.2a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg></div><h4 class="h">טלפון</h4><h4 class="e">Phone</h4><a href="tel:+972545201773"><span class="pnum-big">054-520-1773</span></a></div>
       <div class="cc reveal"><div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg></div><h4>WhatsApp</h4><a href="https://wa.me/972545201773">054-520-1773</a></div>
       <div class="cc reveal"><div class="cc-ico"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></div><h4 class="h">אימייל</h4><h4 class="e">Email</h4><a href="mailto:xmoto1000@gmail.com" style="font-size:.88rem;word-break:break-all;">xmoto1000@gmail.com</a></div>
