@@ -98,13 +98,13 @@ input,select,textarea{font-family:inherit;}
 .reveal.in{opacity:1;transform:translateY(0);}
 
 /* ── TOPBAR ── */
-.topbar{background:var(--navy);color:#a8bed8;font-size:.78rem;padding:.5rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:.4rem;}
+.topbar{background:var(--navy3);color:#a8bed8;font-family:var(--font-m);font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:.4rem;border-bottom:1px solid rgba(125,212,232,.08);}
 .tbadges{display:flex;gap:1.4rem;align-items:center;}
-.tbadge{display:flex;align-items:center;gap:.35rem;white-space:nowrap;}
-.tbadge svg{width:13px;height:13px;fill:var(--yellow);}
-.tphone{color:#fff;font-weight:700;display:flex;align-items:center;gap:.4rem;font-size:.82rem;transition:var(--t);}
+.tbadge{display:flex;align-items:center;gap:.4rem;white-space:nowrap;}
+.tbadge svg{width:10px;height:10px;fill:var(--th-3);}
+.tphone{color:#fff;font-weight:500;display:flex;align-items:center;gap:.45rem;font-family:var(--font-m);font-size:.78rem;letter-spacing:.04em;text-transform:none;transition:var(--t);}
 .tphone:hover{color:var(--yellow);}
-.tphone svg{width:13px;height:13px;fill:currentColor;}
+.tphone svg{width:12px;height:12px;fill:currentColor;}
 
 /* ── NAV ── */
 nav{background:#fff;border-bottom:1px solid var(--gray2);padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;backdrop-filter:saturate(1.4) blur(12px);background:rgba(255,255,255,.92);}
@@ -112,17 +112,17 @@ nav{background:#fff;border-bottom:1px solid var(--gray2);padding:.85rem 1.5rem;d
 .logo-wrap{display:flex;align-items:center;gap:.65rem;flex-shrink:0;}
 .logo-mark{height:46px;width:auto;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 3px 6px rgba(13,40,80,.35));flex-shrink:0;}
 .logo-mark svg{height:46px;width:auto;display:block;}
-.logo-text .lname{font-family:var(--font-d);font-size:1.18rem;font-weight:800;color:var(--navy);letter-spacing:.3px;line-height:1.1;}
+.logo-text .lname{font-family:var(--font-d);font-size:1.18rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.05;}
 .logo-text .lname span{color:var(--teal);}
-.logo-text .lsub{font-size:.62rem;color:var(--muted);line-height:1.3;letter-spacing:.02em;}
+.logo-text .lsub{font-family:var(--font-m);font-size:.58rem;color:var(--muted);line-height:1.3;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-top:.15rem;}
 .nav-links{list-style:none;display:flex;gap:1.6rem;}
-.nav-links a{color:var(--muted);font-size:.85rem;font-weight:600;transition:var(--t);padding:.25rem 0;border-bottom:2px solid transparent;}
-.nav-links a:hover{color:var(--navy);border-color:var(--teal);}
+.nav-links a{color:var(--muted);font-size:.85rem;font-weight:600;transition:var(--t);padding:.3rem 0;border-bottom:2px solid transparent;position:relative;}
+.nav-links a:hover{color:var(--navy);border-color:var(--th-4);}
 .nav-end{display:flex;align-items:center;gap:.55rem;}
-.btn-nav{background:var(--yellow);color:var(--navy);padding:.6rem 1.2rem;border-radius:8px;font-weight:800;font-size:.86rem;transition:var(--t);white-space:nowrap;display:inline-flex;align-items:center;gap:.35rem;}
-.btn-nav:hover{background:var(--yellow-d);transform:translateY(-1px);}
-.btn-nav svg{width:14px;height:14px;fill:currentColor;}
-.lang-btn{background:transparent;border:1.5px solid var(--bdr);color:var(--muted);padding:.42rem .8rem;border-radius:6px;font-size:.74rem;font-weight:600;transition:var(--t);white-space:nowrap;}
+.btn-nav{background:var(--yellow);color:var(--navy);padding:.6rem 1.15rem;border-radius:7px;font-weight:800;font-size:.84rem;transition:var(--t);white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;letter-spacing:-.01em;}
+.btn-nav:hover{background:var(--yellow-d);transform:translateY(-1px);box-shadow:0 6px 16px rgba(245,184,0,.28);}
+.btn-nav svg{width:13px;height:13px;fill:currentColor;}
+.lang-btn{background:transparent;border:1.5px solid var(--bdr);color:var(--muted);padding:.42rem .75rem;border-radius:6px;font-family:var(--font-m);font-size:.68rem;font-weight:500;letter-spacing:.08em;transition:var(--t);white-space:nowrap;}
 .lang-btn:hover{border-color:var(--teal);color:var(--teal);}
 
 .hamburger{display:none;flex-direction:column;gap:5px;padding:.4rem;}
@@ -184,13 +184,15 @@ h1.hero-h em::after{content:"";position:absolute;left:0;right:0;bottom:-4px;heig
 .hstat:nth-child(4) strong{color:#fff;}
 
 /* hero form */
-.hero-card{flex-shrink:0;width:340px;background:#fff;border-radius:16px;padding:1.85rem;box-shadow:var(--shadow-lg);position:relative;align-self:center;color:var(--text);}
-.card-ribbon{position:absolute;top:-13px;right:1.4rem;background:var(--yellow);color:var(--navy);padding:.32rem .95rem;border-radius:999px;font-size:.7rem;font-weight:800;letter-spacing:.02em;}
+.hero-card{flex-shrink:0;width:340px;background:#fff;border-radius:16px;padding:2rem 1.85rem 1.85rem;box-shadow:var(--shadow-lg);position:relative;align-self:center;color:var(--text);overflow:hidden;}
+.hero-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--thermal);}
+.card-ribbon{position:absolute;top:-11px;right:1.4rem;background:var(--yellow);color:var(--navy);padding:.34rem .9rem;border-radius:999px;font-family:var(--font-m);font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 4px 12px rgba(245,184,0,.35);}
 body.en .card-ribbon{right:auto;left:1.4rem;}
-.card-title{font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:.3rem;}
-.card-sub{font-size:.79rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.55;}
-.step-tabs{display:flex;gap:.5rem;margin-bottom:1.2rem;}
-.stab{flex:1;height:4px;background:var(--gray2);border-radius:2px;transition:var(--t);}
+.card-title{font-family:var(--font-d);font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:.35rem;letter-spacing:-.01em;}
+.card-sub{font-size:.79rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.55;}
+.step-tabs{display:flex;gap:.4rem;margin-bottom:1.2rem;align-items:center;}
+.step-tabs::before{content:"01 · 02";font-family:var(--font-m);font-size:.6rem;color:var(--muted);letter-spacing:.14em;margin-inline-end:.6rem;font-weight:500;}
+.stab{flex:1;height:3px;background:var(--gray2);border-radius:2px;transition:var(--t);}
 .stab.on{background:var(--yellow);}
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:.55rem;}
 .fg.full{grid-template-columns:1fr;}
@@ -215,16 +217,15 @@ body.en .cbox-confirm{border-left:none;border-right:3px solid var(--teal);}
 /* ── SECTIONS ── */
 section{padding:5rem 1.5rem;}
 .container{max-width:1240px;margin:0 auto;}
-.section-head{margin-bottom:2.4rem;position:relative;padding-top:1.4rem;}
-.section-head::before{content:"";position:absolute;top:0;inset-inline-start:0;width:64px;height:2px;background:var(--thermal);opacity:.85;}
+.section-head{margin-bottom:2.4rem;}
 .section-head.center{text-align:center;}
-.section-head.center::before{inset-inline-start:50%;transform:translateX(-50%);}
-body.en .section-head.center::before{transform:translateX(-50%);}
 .section-head.center .ssub{margin-left:auto;margin-right:auto;}
-.section-meta{display:flex;align-items:center;gap:.8rem;margin-bottom:.85rem;font-family:var(--font-m);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;}
+.section-meta{display:flex;align-items:center;gap:.8rem;margin-bottom:.95rem;font-family:var(--font-m);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;position:relative;padding-top:1.05rem;}
+.section-meta::before{content:"";position:absolute;top:0;inset-inline-start:0;width:52px;height:1.5px;background:var(--thermal);opacity:.85;}
 .section-head.center .section-meta{justify-content:center;}
-.snum{color:var(--muted);font-variant-numeric:tabular-nums;}
-.section-head.dark .snum{color:var(--muted-l);opacity:.75;}
+.section-head.center .section-meta::before{inset-inline-start:50%;transform:translateX(-50%);}
+.section-meta .snum{color:var(--muted);font-variant-numeric:tabular-nums;}
+.section-head.dark .section-meta .snum{color:var(--muted-l);opacity:.75;}
 .section-meta .sep{width:18px;height:1px;background:currentColor;opacity:.35;display:inline-block;}
 /* Legacy + scoped variants: default block eyebrow outside section-meta, inline mono inside */
 .stag{font-family:var(--font-m);font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.65rem;display:inline-block;}
@@ -240,61 +241,85 @@ body.en .section-head.center::before{transform:translateX(-50%);}
 /* ── SERVICES ── */
 #services{background:var(--gray);}
 .sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem;margin-top:2rem;}
-.scard{background:#fff;border:1.5px solid var(--bdr);border-radius:14px;padding:1.7rem 1.4rem;transition:var(--t);position:relative;overflow:hidden;}
-.scard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--blue));transform:scaleX(0);transform-origin:right;transition:transform var(--t);}
+.scard{background:#fff;border:1.5px solid var(--bdr);border-radius:14px;padding:1.55rem 1.4rem 1.65rem;transition:var(--t);position:relative;overflow:hidden;}
+.scard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--thermal);transform:scaleX(0);transform-origin:right;transition:transform .45s ease;}
 body.en .scard::before{transform-origin:left;}
-.scard:hover{border-color:var(--teal);box-shadow:0 12px 30px rgba(30,144,176,.13);transform:translateY(-3px);}
+.scard:hover{border-color:var(--teal);box-shadow:0 14px 32px rgba(30,144,176,.14);transform:translateY(-3px);}
 .scard:hover::before{transform:scaleX(1);}
-.sico{width:48px;height:48px;background:linear-gradient(135deg,rgba(30,144,176,.12),rgba(26,95,180,.08));border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.scard-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--font-m);font-size:.62rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.scard-meta .num{font-variant-numeric:tabular-nums;color:var(--muted);opacity:.6;}
+.scard-meta .code{color:var(--teal);}
+.sico{width:48px;height:48px;background:linear-gradient(135deg,rgba(30,144,176,.1),rgba(26,95,180,.04));border:1px solid rgba(30,144,176,.18);border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:.95rem;}
 .sico svg{width:24px;height:24px;fill:var(--teal);}
-.scard h3{font-size:1.02rem;font-weight:700;color:var(--navy);margin-bottom:.45rem;}
-.scard p{font-size:.85rem;color:var(--muted);line-height:1.65;}
+.scard h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.45rem;letter-spacing:-.01em;}
+.scard p{font-size:.86rem;color:var(--muted);line-height:1.65;}
 
 /* ── PROCESS ── */
 #process{background:#fff;}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2.4rem;position:relative;}
-.pstep{background:var(--gray);border-radius:14px;padding:1.8rem 1.4rem;border:1.5px solid var(--gray2);position:relative;transition:var(--t);}
+.pgrid::before{content:"";position:absolute;top:34%;left:6%;right:6%;height:1px;background-image:repeating-linear-gradient(90deg,var(--bdr) 0,var(--bdr) 5px,transparent 5px,transparent 11px);z-index:0;}
+@media(max-width:760px){.pgrid::before{display:none;}}
+.pstep{background:var(--gray);border-radius:14px;padding:2rem 1.4rem 1.6rem;border:1.5px solid var(--gray2);position:relative;transition:var(--t);overflow:hidden;z-index:1;}
 .pstep:hover{border-color:var(--teal);background:#fff;box-shadow:var(--shadow);transform:translateY(-3px);}
-.pnum{position:absolute;top:-14px;right:1.4rem;background:var(--yellow);color:var(--navy);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.92rem;font-family:var(--font-d);box-shadow:0 4px 12px rgba(245,184,0,.35);}
-body.en .pnum{right:auto;left:1.4rem;}
-.pstep h4{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:.45rem;margin-top:.3rem;}
-.pstep p{font-size:.84rem;color:var(--muted);line-height:1.65;}
+.pghost{position:absolute;top:-1.2rem;inset-inline-end:-.4rem;font-family:var(--font-d);font-weight:800;font-size:6.6rem;line-height:1;color:var(--bdr);opacity:.55;pointer-events:none;font-variant-numeric:tabular-nums;letter-spacing:-.05em;transition:var(--t);}
+.pstep:hover .pghost{color:var(--teal-l);opacity:.35;}
+.pnum{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-m);font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.85rem;position:relative;z-index:2;}
+.pnum::before{content:"";width:18px;height:1px;background:var(--teal);}
+.pstep h4{font-weight:700;color:var(--navy);font-size:1.05rem;margin-bottom:.45rem;position:relative;z-index:2;letter-spacing:-.01em;}
+.pstep p{font-size:.86rem;color:var(--muted);line-height:1.65;position:relative;z-index:2;}
 
 /* ── WHY ── */
 #why{background:var(--navy);position:relative;overflow:hidden;}
 #why::before{content:"";position:absolute;inset:0;background-image:
-  repeating-linear-gradient(0deg,transparent,transparent 49px,rgba(30,144,176,.05) 49px,rgba(30,144,176,.05) 50px),
-  repeating-linear-gradient(90deg,transparent,transparent 49px,rgba(30,144,176,.05) 49px,rgba(30,144,176,.05) 50px);pointer-events:none;}
+  repeating-linear-gradient(0deg,transparent,transparent 63px,rgba(125,212,232,.045) 63px,rgba(125,212,232,.045) 64px),
+  repeating-linear-gradient(90deg,transparent,transparent 63px,rgba(125,212,232,.045) 63px,rgba(125,212,232,.045) 64px);pointer-events:none;
+  -webkit-mask-image:radial-gradient(110% 80% at 50% 30%,#000 30%,transparent 90%);
+          mask-image:radial-gradient(110% 80% at 50% 30%,#000 30%,transparent 90%);}
 .why-wrap{display:flex;gap:3rem;align-items:flex-start;flex-wrap:wrap;position:relative;}
 .why-stats-wrap{flex:1;min-width:260px;}
-.sgrid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;}
-.sbox{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.4rem 1rem;text-align:center;transition:var(--t);}
-.sbox:hover{background:rgba(245,184,0,.08);border-color:rgba(245,184,0,.3);}
-.snum{font-family:var(--font-d);font-size:2.4rem;font-weight:800;color:var(--yellow);line-height:1;}
-.slbl{font-size:.78rem;color:#9bbcd9;margin-top:.35rem;}
+.why-sub{font-family:var(--font-m);font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-l);margin-bottom:1.1rem;display:inline-flex;align-items:center;gap:.65rem;}
+.why-sub::before{content:"";width:20px;height:1px;background:var(--teal-l);opacity:.55;}
+.sgrid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(125,212,232,.18);border:1px solid rgba(125,212,232,.22);border-radius:12px;overflow:hidden;}
+.sbox{background:rgba(13,30,55,.65);padding:1.5rem 1.3rem;text-align:start;transition:var(--t);position:relative;}
+.sbox:hover{background:rgba(245,184,0,.06);}
+.sbox::after{content:"";position:absolute;top:.85rem;inset-inline-end:.95rem;width:6px;height:6px;border-radius:50%;background:var(--th-3);opacity:.55;box-shadow:0 0 6px var(--th-3);}
+.sbox:nth-child(2)::after{background:var(--th-4);box-shadow:0 0 6px var(--th-4);}
+.sbox:nth-child(3)::after{background:#fff;box-shadow:0 0 6px rgba(255,255,255,.7);opacity:.7;}
+.sbox:nth-child(4)::after{background:var(--th-5);box-shadow:0 0 6px var(--th-5);}
+.snum{font-family:var(--font-m);font-size:2.05rem;font-weight:500;color:var(--yellow);line-height:1;letter-spacing:-.045em;font-variant-numeric:tabular-nums;display:block;margin-bottom:.5rem;}
+.sbox:nth-child(1) .snum{color:#fff;}
+.sbox:nth-child(2) .snum{color:var(--th-3);}
+.sbox:nth-child(3) .snum{color:var(--yellow);}
+.sbox:nth-child(4) .snum{color:#fff;}
+.slbl{font-size:.66rem;color:#9bbcd9;letter-spacing:.14em;text-transform:uppercase;font-family:var(--font-m);font-weight:500;}
 .why-list{flex:1;min-width:280px;}
 .witem{display:flex;gap:.95rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.07);}
 .witem:last-child{border-bottom:none;}
-.wcheck{flex-shrink:0;width:32px;height:32px;background:rgba(30,144,176,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal-l);}
+.wcheck{flex-shrink:0;width:32px;height:32px;background:rgba(30,144,176,.18);border:1px solid rgba(125,212,232,.22);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--teal-l);}
 .wcheck svg{width:14px;height:14px;fill:currentColor;}
-.witem h4{font-weight:700;color:#fff;font-size:.96rem;margin-bottom:.25rem;}
+.witem h4{font-weight:700;color:#fff;font-size:.97rem;margin-bottom:.25rem;letter-spacing:-.01em;}
 .witem p{font-size:.85rem;color:#9bbcd9;line-height:1.65;}
 
 /* ── TESTIMONIALS ── */
 #testimonials{background:#fff;}
 .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:2.2rem;}
-.tcard{background:var(--gray);border-radius:14px;padding:1.7rem 1.5rem;border:1.5px solid var(--gray2);transition:var(--t);position:relative;}
+.tcard{background:var(--gray);border-radius:14px;padding:1.7rem 1.5rem 1.4rem;border:1.5px solid var(--gray2);transition:var(--t);position:relative;overflow:hidden;}
+.tcard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--thermal);transform:scaleX(0);transform-origin:right;transition:transform .45s ease;}
+body.en .tcard::before{transform-origin:left;}
 .tcard:hover{border-color:var(--teal);background:#fff;box-shadow:var(--shadow);transform:translateY(-2px);}
-.tquote{position:absolute;top:1rem;font-family:var(--font-d);font-size:3.4rem;color:var(--teal);opacity:.2;line-height:1;}
+.tcard:hover::before{transform:scaleX(1);}
+.tquote{position:absolute;top:.5rem;font-family:var(--font-d);font-size:5rem;color:var(--th-3);opacity:.22;line-height:1;font-weight:800;}
 body:not(.en) .tquote{right:1.2rem;}
 body.en .tquote{left:1.2rem;}
-.tstars{display:flex;gap:2px;margin-bottom:.85rem;}
-.tstars svg{width:16px;height:16px;fill:var(--yellow);}
-.ttext{font-size:.9rem;color:var(--text);line-height:1.7;margin-bottom:1rem;font-style:italic;}
-.tauth{display:flex;align-items:center;gap:.7rem;}
-.tavatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--blue));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.92rem;}
-.tname{font-weight:700;color:var(--navy);font-size:.88rem;}
-.trole{font-size:.74rem;color:var(--muted);}
+.tstars{display:flex;gap:3px;margin-bottom:.95rem;align-items:center;}
+.tstars svg{width:14px;height:14px;fill:var(--yellow);}
+.tverified{margin-inline-start:.55rem;font-family:var(--font-m);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);display:inline-flex;align-items:center;gap:.35rem;font-weight:500;}
+.tverified::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 5px var(--green);}
+.ttext{font-size:.92rem;color:var(--text);line-height:1.7;margin-bottom:1.1rem;font-style:italic;}
+.tauth{display:flex;align-items:center;gap:.75rem;padding-top:.85rem;border-top:1px solid var(--bdr);}
+.tavatar{width:40px;height:40px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-m);font-weight:600;font-size:.78rem;letter-spacing:-.02em;border:1px solid rgba(125,212,232,.28);}
+.tname{font-weight:700;color:var(--navy);font-size:.9rem;letter-spacing:-.01em;}
+.trole{font-size:.72rem;color:var(--muted);font-family:var(--font-m);letter-spacing:.04em;}
 
 /* ── COVERAGE ── */
 #coverage{background:linear-gradient(180deg,var(--navy) 0%, #0d2745 100%);position:relative;overflow:hidden;}
@@ -313,9 +338,15 @@ body.en .tquote{left:1.2rem;}
 
 /* ── GALLERY ── */
 #gallery{background:#fff;}
-.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:2.2rem;}
-.gitem{background:#0a1628;border-radius:14px;aspect-ratio:4/3;overflow:hidden;position:relative;border:1.5px solid var(--bdr);cursor:pointer;transition:var(--t);}
-.gitem:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 12px 30px rgba(30,144,176,.18);}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:2.2rem;counter-reset:gitem;}
+.gitem{background:#0a1628;border-radius:14px;aspect-ratio:4/3;overflow:hidden;position:relative;border:1.5px solid var(--bdr);cursor:pointer;transition:var(--t);counter-increment:gitem;}
+.gitem::before,.gitem::after{content:"";position:absolute;width:14px;height:14px;pointer-events:none;opacity:.45;transition:var(--t);z-index:2;}
+.gitem::before{top:8px;left:8px;border-top:2px solid var(--th-3);border-left:2px solid var(--th-3);}
+.gitem::after{bottom:8px;right:8px;border-bottom:2px solid var(--th-3);border-right:2px solid var(--th-3);}
+.gitem:hover::before,.gitem:hover::after{opacity:1;border-color:var(--th-4);}
+.gitem .gid{position:absolute;top:.55rem;inset-inline-end:.65rem;font-family:var(--font-m);font-size:.6rem;font-weight:500;letter-spacing:.12em;color:var(--th-3);background:rgba(13,27,46,.6);padding:.22rem .5rem;border-radius:4px;backdrop-filter:blur(4px);z-index:2;text-transform:uppercase;}
+.gitem .gid::before{content:counter(gitem,decimal-leading-zero) " / 14";}
+.gitem:hover{border-color:var(--th-3);transform:translateY(-3px);box-shadow:0 14px 32px rgba(125,212,232,.22);}
 .gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
 .gitem:hover img{transform:scale(1.06);}
 .gitem.hero{grid-column:span 2;grid-row:span 2;}
@@ -336,15 +367,20 @@ body.en .tquote{left:1.2rem;}
 
 /* ── FAQ ── */
 #faq{background:var(--gray);}
-.faq-list{margin-top:2.2rem;display:flex;flex-direction:column;gap:.7rem;max-width:820px;margin-left:auto;margin-right:auto;}
-.faq-item{background:#fff;border:1.5px solid var(--bdr);border-radius:12px;overflow:hidden;transition:var(--t);}
+.faq-list{margin-top:2.2rem;display:flex;flex-direction:column;gap:.7rem;max-width:820px;margin-left:auto;margin-right:auto;counter-reset:faq;}
+.faq-item{background:#fff;border:1.5px solid var(--bdr);border-radius:12px;overflow:hidden;transition:var(--t);counter-increment:faq;position:relative;}
+.faq-item::before{content:"";position:absolute;top:0;bottom:0;inset-inline-start:0;width:3px;background:var(--thermal);opacity:0;transition:opacity var(--t);}
 .faq-item:hover{border-color:var(--teal);}
+.faq-item.open{border-color:var(--th-3);}
+.faq-item.open::before{opacity:.9;}
 .faq-q{width:100%;padding:1.1rem 1.3rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:700;color:var(--navy);font-size:.95rem;text-align:start;}
+.faq-q::before{content:"Q" counter(faq,decimal-leading-zero);font-family:var(--font-m);font-size:.68rem;color:var(--teal);letter-spacing:.14em;font-weight:500;flex-shrink:0;align-self:flex-start;padding-top:.18rem;min-width:34px;}
 .faq-q svg{width:18px;height:18px;fill:var(--teal);transition:transform var(--t);flex-shrink:0;}
 .faq-item.open .faq-q svg{transform:rotate(45deg);}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
 .faq-item.open .faq-a{max-height:340px;}
-.faq-a-inner{padding:0 1.3rem 1.2rem;color:var(--muted);font-size:.88rem;line-height:1.75;}
+.faq-a-inner{padding:0 1.3rem 1.2rem 4.4rem;color:var(--muted);font-size:.88rem;line-height:1.75;}
+body.en .faq-a-inner{padding:0 4.4rem 1.2rem 1.3rem;}
 
 /* ── STUDENTS ── */
 #students{background:#fff;}
@@ -377,33 +413,39 @@ body.en .tquote{left:1.2rem;}
 /* ── CONTACT ── */
 #contact{background:linear-gradient(180deg,var(--gray) 0%, #fff 100%);}
 .ccards{display:flex;gap:1.1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
-.cc{background:#fff;border:1.5px solid var(--bdr);border-radius:14px;padding:1.8rem 2rem;min-width:200px;text-align:center;transition:var(--t);}
+.cc{background:#fff;border:1.5px solid var(--bdr);border-radius:14px;padding:1.7rem 1.6rem;min-width:200px;text-align:center;transition:var(--t);position:relative;overflow:hidden;}
+.cc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--thermal);transform:scaleX(0);transform-origin:right;transition:transform .45s ease;}
+body.en .cc::before{transform-origin:left;}
 .cc:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:var(--shadow);}
-.cc-ico{width:46px;height:46px;background:linear-gradient(135deg,rgba(30,144,176,.12),rgba(26,95,180,.06));border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto .85rem;}
-.cc-ico svg{width:22px;height:22px;fill:var(--teal);}
-.cc h4{font-weight:700;color:var(--navy);margin-bottom:.35rem;font-size:.95rem;}
-.cc a{color:var(--teal);font-weight:600;font-size:.92rem;display:block;}
-.cc .pnum-big{font-family:var(--font-d);font-size:1.45rem;font-weight:800;color:var(--navy);direction:ltr;display:inline-block;}
+.cc:hover::before{transform:scaleX(1);}
+.cc-ico{width:44px;height:44px;background:rgba(30,144,176,.06);border:1px solid rgba(30,144,176,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto .9rem;}
+.cc-ico svg{width:20px;height:20px;fill:var(--teal);}
+.cc h4{font-weight:500;color:var(--muted);margin-bottom:.5rem;font-size:.66rem;text-transform:uppercase;letter-spacing:.18em;font-family:var(--font-m);}
+.cc a{color:var(--text);font-weight:600;font-size:.94rem;display:block;font-family:var(--font-m);letter-spacing:.01em;transition:var(--t);}
+.cc a:hover{color:var(--teal);}
+.cc .pnum-big{font-family:var(--font-m);font-size:1.3rem;font-weight:500;color:var(--navy);direction:ltr;display:inline-block;letter-spacing:-.02em;}
 .wa-btn{display:inline-flex;align-items:center;gap:.55rem;background:#25D366;color:#fff;padding:.85rem 2rem;border-radius:9px;font-weight:700;margin-top:2rem;font-size:.95rem;transition:var(--t);box-shadow:0 8px 22px rgba(37,211,102,.32);}
 .wa-btn:hover{background:#1eb357;transform:translateY(-2px);box-shadow:0 12px 30px rgba(37,211,102,.4);}
 .wa-btn svg{width:18px;height:18px;fill:currentColor;}
 
 /* ── FOOTER ── */
-footer{background:var(--navy);padding:2.5rem 1.5rem 1.5rem;color:#9bbcd9;}
+footer{background:var(--navy);padding:3rem 1.5rem 1.4rem;color:#9bbcd9;position:relative;}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(125,212,232,.32) 25%,rgba(245,184,0,.32) 70%,transparent 100%);opacity:.85;}
 .fwrap{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;}
 .fcol{flex:1;min-width:200px;}
 .fcol-brand{flex:1.4;}
-.flg{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;}
+.flg{display:flex;align-items:center;gap:.6rem;margin-bottom:.85rem;}
 .flg-mark{height:42px;width:auto;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35));flex-shrink:0;}
 .flg-mark svg{height:42px;width:auto;display:block;}
-.flg-name{font-family:var(--font-d);font-weight:800;color:#fff;font-size:1.2rem;line-height:1.1;}
+.flg-name{font-family:var(--font-d);font-weight:800;color:#fff;font-size:1.2rem;line-height:1.1;letter-spacing:-.01em;}
 .flg-name span{color:var(--teal-l);}
-.fcol p{font-size:.82rem;line-height:1.7;color:#7fa0bd;}
-.fcol h5{font-family:var(--font-d);color:#fff;font-size:1rem;font-weight:700;margin-bottom:.85rem;letter-spacing:.02em;}
-.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.fcol p{font-size:.83rem;line-height:1.7;color:#7fa0bd;}
+.fcol h5{font-family:var(--font-m);color:var(--teal-l);font-size:.66rem;font-weight:500;margin-bottom:1rem;letter-spacing:.18em;text-transform:uppercase;}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
 .fcol ul a{font-size:.85rem;color:#9bbcd9;transition:var(--t);}
-.fcol ul a:hover{color:var(--yellow);}
-.fbottom{max-width:1240px;margin:2rem auto 0;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;color:#5a7a99;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;text-align:center;}
+.fcol ul a:hover{color:var(--th-3);}
+.fbottom{max-width:1240px;margin:2.4rem auto 0;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.08);font-family:var(--font-m);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#5a7a99;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;text-align:center;}
+.fbottom .build{color:var(--teal-l);opacity:.65;}
 
 /* ── FLOATING WHATSAPP + ASSISTANT ── */
 .wa-fab{position:fixed;bottom:1.5rem;left:1.5rem;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.45);z-index:500;transition:var(--t);}
@@ -673,36 +715,42 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
     </div>
     <div class="sgrid">
       <article class="scard reveal">
+        <div class="scard-meta"><span class="code">SCAN</span><span class="num">/ 01</span></div>
         <div class="sico"><svg viewBox="0 0 24 24"><path d="M12 2 C 7 9 4 13.5 4 16.5 a 8 8 0 0 0 16 0 C 20 13.5 17 9 12 2zm0 16a4 4 0 0 1 -4-4h2 a 2 2 0 0 0 4 0 h2 a 4 4 0 0 1-4 4z"/></svg></div>
         <h3 class="h">נזילות מים</h3><h3 class="e">Water Leaks</h3>
         <p class="h">איתור נזילות מסתתרות בקירות, רצפות וצנרת ראשית — ללא נזק לבית.</p>
         <p class="e">Detecting hidden leaks in walls, floors and main pipes — without damaging your home.</p>
       </article>
       <article class="scard reveal">
+        <div class="scard-meta"><span class="code">CORR</span><span class="num">/ 02</span></div>
         <div class="sico"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg></div>
         <h3 class="h">איתור אקוסטי</h3><h3 class="e">Acoustic Detection</h3>
         <p class="h">גלאים אקוסטיים מתקדמים שזיהוי גלי קול מנזילות סמויות בצנרת.</p>
         <p class="e">Advanced acoustic detectors that identify sound waves from hidden pipe leaks.</p>
       </article>
       <article class="scard reveal">
+        <div class="scard-meta"><span class="code">IR</span><span class="num">/ 03</span></div>
         <div class="sico"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h6v2H7v-2z"/></svg></div>
         <h3 class="h">תרמוגרפיה</h3><h3 class="e">Thermography</h3>
         <p class="h">מצלמות חום מקצועיות לאיתור הפרשי טמפרטורה של מים מסתננים.</p>
         <p class="e">Professional thermal cameras to detect temperature differences from infiltrating water.</p>
       </article>
       <article class="scard reveal">
+        <div class="scard-meta"><span class="code">SEAL</span><span class="num">/ 04</span></div>
         <div class="sico"><svg viewBox="0 0 24 24"><path d="M10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8l-2-2zm2 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg></div>
         <h3 class="h">גג ורטיבות</h3><h3 class="e">Roof & Moisture</h3>
         <p class="h">זיהוי ממוקד של חדירת מים דרך גגות, גגות שטוחים ואיטום לקוי.</p>
         <p class="e">Targeted detection of water penetration through roofs and faulty sealing.</p>
       </article>
       <article class="scard reveal">
+        <div class="scard-meta"><span class="code">MAP</span><span class="num">/ 05</span></div>
         <div class="sico"><svg viewBox="0 0 24 24"><path d="M3 12 L 21 12 M 7 6 L 7 18 M 17 6 L 17 18 M 3 6 L 21 6 M 3 18 L 21 18" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
         <h3 class="h">מיפוי צנרת</h3><h3 class="e">Pipe Mapping</h3>
         <p class="h">מיפוי מלא של מערכות צנרת מוסתרות לפני שיפוץ או בנייה.</p>
         <p class="e">Complete mapping of hidden pipe systems before renovation or construction.</p>
       </article>
       <article class="scard reveal">
+        <div class="scard-meta"><span class="code" style="color:var(--th-5);">24/7</span><span class="num">/ 06</span></div>
         <div class="sico"><svg viewBox="0 0 24 24"><path d="M12 2 L 1 21 L 23 21 z M 12 16 a 1 1 0 0 1 0 -2 1 1 0 0 1 0 2 z M 13 13 L 11 13 L 11 8 L 13 8 z"/></svg></div>
         <h3 class="h">חירום 24/7</h3><h3 class="e">24/7 Emergency</h3>
         <p class="h">מענה מהיר בכל שעה — סופי שבוע, חגים ולילות. הגעה תוך 60 דקות.</p>
@@ -722,10 +770,10 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
       <p class="ssub e">From the first phone call to the final report — a transparent, fast and thorough process.</p>
     </div>
     <div class="pgrid">
-      <div class="pstep reveal"><span class="pnum">1</span><h4 class="h">קביעת תור</h4><h4 class="e">Book</h4><p class="h">צרו קשר טלפונית או בטופס. נחזור אליכם תוך שעה לתאום מועד מתאים.</p><p class="e">Call us or fill in the form. We'll reply within an hour to schedule a visit.</p></div>
-      <div class="pstep reveal"><span class="pnum">2</span><h4 class="h">בדיקה בשטח</h4><h4 class="e">Inspect</h4><p class="h">הגעה במועד עם ציוד מלא. סריקה אקוסטית, תרמוגרפית ואנדוסקופית.</p><p class="e">On-time arrival with full equipment. Acoustic, thermal and endoscopic scanning.</p></div>
-      <div class="pstep reveal"><span class="pnum">3</span><h4 class="h">דוח מקצועי</h4><h4 class="e">Report</h4><p class="h">דוח כתוב עם מיקום מדויק, תמונות, סיבה והמלצות לתיקון — תוך 24 שעות.</p><p class="e">Written report with exact location, photos, cause and repair recommendations — within 24 hours.</p></div>
-      <div class="pstep reveal"><span class="pnum">4</span><h4 class="h">תיקון או ליווי</h4><h4 class="e">Repair</h4><p class="h">תיקון ע"י הצוות שלנו או ליווי מקצועי לאינסטלטור שלכם.</p><p class="e">Repair by our team, or professional guidance for your own plumber.</p></div>
+      <div class="pstep reveal"><span class="pghost">01</span><span class="pnum"><span class="h">שלב</span><span class="e">Step</span> 01</span><h4 class="h">קביעת תור</h4><h4 class="e">Book</h4><p class="h">צרו קשר טלפונית או בטופס. נחזור אליכם תוך שעה לתאום מועד מתאים.</p><p class="e">Call us or fill in the form. We'll reply within an hour to schedule a visit.</p></div>
+      <div class="pstep reveal"><span class="pghost">02</span><span class="pnum"><span class="h">שלב</span><span class="e">Step</span> 02</span><h4 class="h">בדיקה בשטח</h4><h4 class="e">Inspect</h4><p class="h">הגעה במועד עם ציוד מלא. סריקה אקוסטית, תרמוגרפית ואנדוסקופית.</p><p class="e">On-time arrival with full equipment. Acoustic, thermal and endoscopic scanning.</p></div>
+      <div class="pstep reveal"><span class="pghost">03</span><span class="pnum"><span class="h">שלב</span><span class="e">Step</span> 03</span><h4 class="h">דוח מקצועי</h4><h4 class="e">Report</h4><p class="h">דוח כתוב עם מיקום מדויק, תמונות, סיבה והמלצות לתיקון — תוך 24 שעות.</p><p class="e">Written report with exact location, photos, cause and repair recommendations — within 24 hours.</p></div>
+      <div class="pstep reveal"><span class="pghost">04</span><span class="pnum"><span class="h">שלב</span><span class="e">Step</span> 04</span><h4 class="h">תיקון או ליווי</h4><h4 class="e">Repair</h4><p class="h">תיקון ע"י הצוות שלנו או ליווי מקצועי לאינסטלטור שלכם.</p><p class="e">Repair by our team, or professional guidance for your own plumber.</p></div>
     </div>
   </div>
 </section>
@@ -733,12 +781,15 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <!-- WHY US -->
 <section id="why">
   <div class="container">
+    <div class="section-head dark reveal">
+      <div class="section-meta"><span class="snum">03 / 09</span><span class="sep"></span><span class="stag h">למה אנחנו?</span><span class="stag e">Why Choose Us?</span></div>
+      <h2 class="stitle white h">מקצועיות ללא פשרות</h2><h2 class="stitle white e">Uncompromising Expertise</h2>
+      <p class="ssub light h">10+ שנות ניסיון, אלפי קריאות שירות, ואלפי לקוחות מרוצים בכל הארץ.</p>
+      <p class="ssub light e">10+ years of experience, thousands of service calls, and thousands of satisfied clients across Israel.</p>
+    </div>
     <div class="why-wrap">
       <div class="why-stats-wrap reveal">
-        <div class="stag" style="color:var(--teal-l);"><span class="h">תוצאות שמדברות</span><span class="e">Results That Speak</span></div>
-        <h2 class="stitle white" style="font-size:1.9rem;"><span class="h">המספרים מאחורי השירות</span><span class="e">The Numbers Behind The Service</span></h2>
-        <p class="ssub light h">10+ שנות ניסיון, אלפי קריאות שירות, ואלפי לקוחות מרוצים בכל הארץ.</p>
-        <p class="ssub light e">10+ years of experience, thousands of service calls, and thousands of satisfied clients across Israel.</p>
+        <div class="why-sub"><span class="h">תוצאות שמדברות · קריאה חיה</span><span class="e">Results — Live Readout</span></div>
         <div class="sgrid2">
           <div class="sbox"><div class="snum">500+</div><div class="slbl h">לקוחות מרוצים</div><div class="slbl e">Happy clients</div></div>
           <div class="sbox"><div class="snum">98%</div><div class="slbl h">דיוק איתור</div><div class="slbl e">Detection accuracy</div></div>
@@ -747,8 +798,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
         </div>
       </div>
       <div class="why-list reveal">
-        <div class="stag h">למה אנחנו?</div><div class="stag e">Why Choose Us?</div>
-        <h2 class="stitle white h">מקצועיות ללא פשרות</h2><h2 class="stitle white e">Uncompromising Expertise</h2>
+        <div class="why-sub"><span class="h">היתרונות המרכזיים</span><span class="e">Key Advantages</span></div>
         <div class="witem"><div class="wcheck"><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div><div><h4 class="h">ציוד מתקדם</h4><h4 class="e">Advanced Equipment</h4><p class="h">גלאים אקוסטיים, תרמוגרפיה, אנדוסקופיה וגז עקיבה — בערך של מאות אלפי שקלים.</p><p class="e">Acoustic detectors, thermography, endoscopy and tracer gas — hundreds of thousands of shekels worth.</p></div></div>
         <div class="witem"><div class="wcheck"><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div><div><h4 class="h">ללא הריסה</h4><h4 class="e">No Demolition</h4><p class="h">אנחנו מאתרים את הנקודה המדויקת — בלי לשבור קירות באקראי.</p><p class="e">We pinpoint the exact spot — no random wall-breaking.</p></div></div>
         <div class="witem"><div class="wcheck"><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div><div><h4 class="h">דוח כתוב מפורט</h4><h4 class="e">Detailed Written Report</h4><p class="h">כל בדיקה מסתיימת בדוח עם תמונות, מיקום וסיבה — מתאים לחברות ביטוח.</p><p class="e">Every inspection ends with a report including photos, location and cause — insurance-ready.</p></div></div>
@@ -770,21 +820,21 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
     <div class="tgrid">
       <div class="tcard reveal">
         <div class="tquote">״</div>
-        <div class="tstars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+        <div class="tstars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><span class="tverified"><span class="h">מאומת</span><span class="e">Verified</span></span></div>
         <p class="ttext h">"חיפשתי נזילה במשך שבועיים. אלחנן הגיע, וב-40 דקות אבחן את המקור המדויק. שילם את עצמו פי עשרה."</p>
         <p class="ttext e">"I searched for a leak for two weeks. Elchanan came, and within 40 minutes pinpointed the exact source. Paid for itself ten times over."</p>
         <div class="tauth"><div class="tavatar">דכ</div><div><div class="tname"><span class="h">דניאל כהן</span><span class="e">Daniel C.</span></div><div class="trole"><span class="h">דירה ברמת גן</span><span class="e">Apartment owner, Ramat Gan</span></div></div></div>
       </div>
       <div class="tcard reveal">
         <div class="tquote">״</div>
-        <div class="tstars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+        <div class="tstars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><span class="tverified"><span class="h">מאומת</span><span class="e">Verified</span></span></div>
         <p class="ttext h">"שירות מקצועי ומהיר. הדוח שקיבלתי היה מפורט מספיק שחברת הביטוח אישרה את התביעה ללא ויכוח."</p>
         <p class="ttext e">"Professional and fast service. The report I received was detailed enough that the insurance company approved the claim without dispute."</p>
         <div class="tauth"><div class="tavatar">שמ</div><div><div class="tname"><span class="h">שירה מזרחי</span><span class="e">Shira M.</span></div><div class="trole"><span class="h">בית פרטי, פתח תקווה</span><span class="e">Private home, Petah Tikva</span></div></div></div>
       </div>
       <div class="tcard reveal">
         <div class="tquote">״</div>
-        <div class="tstars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+        <div class="tstars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><span class="tverified"><span class="h">מאומת</span><span class="e">Verified</span></span></div>
         <p class="ttext h">"כועדה בבניין, אנחנו עובדים עם אלחנן באופן קבוע. תמיד מגיע במהירות, תמיד מוצא, ותמיד במחיר הוגן."</p>
         <p class="ttext e">"As a building HOA, we work with Elchanan regularly. Always arrives quickly, always finds it, always at a fair price."</p>
         <div class="tauth"><div class="tavatar">יל</div><div><div class="tname"><span class="h">יוסי לוי</span><span class="e">Yossi L.</span></div><div class="trole"><span class="h">ועד בית, תל אביב</span><span class="e">HOA chair, Tel Aviv</span></div></div></div>
@@ -803,20 +853,20 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
       <p class="ssub e">Examples from leak detection surveys, thermography and infrastructure mapping projects.</p>
     </div>
     <div class="ggrid" id="ggrid">
-      <div class="gitem hero reveal" tabindex="0" data-i="0"><img src="images/gallery/hero-thermal-wall.jpg" alt="Thermographic leak detection on wall" loading="lazy"><div class="glabel"><span class="h">איתור נזילה תרמוגרפית בקיר</span><span class="e">Thermographic leak detection on wall</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="1"><img src="images/gallery/thermal-hot-leak.jpg" alt="FLIR thermal hot water leak" loading="lazy"><div class="glabel"><span class="h">מצלמת חום FLIR — מים חמים</span><span class="e">FLIR thermal — hot water leak</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="2"><img src="images/gallery/thermal-cold-leak.jpg" alt="FLIR thermal cold water leak" loading="lazy"><div class="glabel"><span class="h">מצלמת חום FLIR — מים קרים</span><span class="e">FLIR thermal — cold water leak</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="3"><img src="images/gallery/acoustic-correlator-pool.jpg" alt="Acoustic correlator leak detection" loading="lazy"><div class="glabel"><span class="h">קורלטור אקוסטי לאיתור נזילות</span><span class="e">Acoustic correlator leak detection</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="4"><img src="images/gallery/thermal-moisture-report.jpg" alt="Moisture mapping and thermal report" loading="lazy"><div class="glabel"><span class="h">מיפוי לחות ודוח תרמי</span><span class="e">Moisture mapping &amp; thermal report</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="5"><img src="images/gallery/pipe-locator-ridgid.jpg" alt="Underground pipe mapping with RIDGID locator" loading="lazy"><div class="glabel"><span class="h">מיפוי צנרת תת-קרקעית</span><span class="e">Underground pipe mapping</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="6"><img src="images/gallery/pipe-locator-handheld.jpg" alt="Locating water pipes under flooring" loading="lazy"><div class="glabel"><span class="h">איתור צנרת מתחת לרצפה</span><span class="e">Locating pipes under flooring</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="7"><img src="images/gallery/endoscope-monitor.jpg" alt="Endoscopic pipe inspection setup" loading="lazy"><div class="glabel"><span class="h">סקר אנדוסקופי לצנרת</span><span class="e">Endoscopic pipe inspection</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="8"><img src="images/gallery/fluorescent-dye-drain.jpg" alt="Drainage test with fluorescent dye" loading="lazy"><div class="glabel"><span class="h">בדיקת ניקוז עם צבע פלואורסצנטי</span><span class="e">Drainage test with fluorescent dye</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="9"><img src="images/gallery/tracer-gas-outdoor.jpg" alt="Tracer gas leak detection" loading="lazy"><div class="glabel"><span class="h">איתור נזילה בגז עוקב</span><span class="e">Tracer gas leak detection</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="10"><img src="images/gallery/pressure-test-plug.jpg" alt="Pressure test plug for drainage" loading="lazy"><div class="glabel"><span class="h">אטם בדיקת לחץ לניקוז</span><span class="e">Pressure test plug for drainage</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="11"><img src="images/gallery/smart-meter-alert.jpg" alt="Smart monitoring leak alert" loading="lazy"><div class="glabel"><span class="h">ניטור חכם — התראת נזילה</span><span class="e">Smart monitoring — leak alert</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="12"><img src="images/gallery/leak-located-marker.jpg" alt="Leak location marked after detection" loading="lazy"><div class="glabel"><span class="h">סימון מיקום הנזילה</span><span class="e">Leak location marked</span></div></div>
-      <div class="gitem reveal" tabindex="0" data-i="13"><img src="images/gallery/field-technician-pool.jpg" alt="Field technician on leak survey" loading="lazy"><div class="glabel"><span class="h">טכנאי בשטח — סקר נזילות</span><span class="e">Field technician — leak survey</span></div></div>
+      <div class="gitem hero reveal" tabindex="0" data-i="0"><span class="gid"></span><img src="images/gallery/hero-thermal-wall.jpg" alt="Thermographic leak detection on wall" loading="lazy"><div class="glabel"><span class="h">איתור נזילה תרמוגרפית בקיר</span><span class="e">Thermographic leak detection on wall</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="1"><span class="gid"></span><img src="images/gallery/thermal-hot-leak.jpg" alt="FLIR thermal hot water leak" loading="lazy"><div class="glabel"><span class="h">מצלמת חום FLIR — מים חמים</span><span class="e">FLIR thermal — hot water leak</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="2"><span class="gid"></span><img src="images/gallery/thermal-cold-leak.jpg" alt="FLIR thermal cold water leak" loading="lazy"><div class="glabel"><span class="h">מצלמת חום FLIR — מים קרים</span><span class="e">FLIR thermal — cold water leak</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="3"><span class="gid"></span><img src="images/gallery/acoustic-correlator-pool.jpg" alt="Acoustic correlator leak detection" loading="lazy"><div class="glabel"><span class="h">קורלטור אקוסטי לאיתור נזילות</span><span class="e">Acoustic correlator leak detection</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="4"><span class="gid"></span><img src="images/gallery/thermal-moisture-report.jpg" alt="Moisture mapping and thermal report" loading="lazy"><div class="glabel"><span class="h">מיפוי לחות ודוח תרמי</span><span class="e">Moisture mapping &amp; thermal report</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="5"><span class="gid"></span><img src="images/gallery/pipe-locator-ridgid.jpg" alt="Underground pipe mapping with RIDGID locator" loading="lazy"><div class="glabel"><span class="h">מיפוי צנרת תת-קרקעית</span><span class="e">Underground pipe mapping</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="6"><span class="gid"></span><img src="images/gallery/pipe-locator-handheld.jpg" alt="Locating water pipes under flooring" loading="lazy"><div class="glabel"><span class="h">איתור צנרת מתחת לרצפה</span><span class="e">Locating pipes under flooring</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="7"><span class="gid"></span><img src="images/gallery/endoscope-monitor.jpg" alt="Endoscopic pipe inspection setup" loading="lazy"><div class="glabel"><span class="h">סקר אנדוסקופי לצנרת</span><span class="e">Endoscopic pipe inspection</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="8"><span class="gid"></span><img src="images/gallery/fluorescent-dye-drain.jpg" alt="Drainage test with fluorescent dye" loading="lazy"><div class="glabel"><span class="h">בדיקת ניקוז עם צבע פלואורסצנטי</span><span class="e">Drainage test with fluorescent dye</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="9"><span class="gid"></span><img src="images/gallery/tracer-gas-outdoor.jpg" alt="Tracer gas leak detection" loading="lazy"><div class="glabel"><span class="h">איתור נזילה בגז עוקב</span><span class="e">Tracer gas leak detection</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="10"><span class="gid"></span><img src="images/gallery/pressure-test-plug.jpg" alt="Pressure test plug for drainage" loading="lazy"><div class="glabel"><span class="h">אטם בדיקת לחץ לניקוז</span><span class="e">Pressure test plug for drainage</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="11"><span class="gid"></span><img src="images/gallery/smart-meter-alert.jpg" alt="Smart monitoring leak alert" loading="lazy"><div class="glabel"><span class="h">ניטור חכם — התראת נזילה</span><span class="e">Smart monitoring — leak alert</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="12"><span class="gid"></span><img src="images/gallery/leak-located-marker.jpg" alt="Leak location marked after detection" loading="lazy"><div class="glabel"><span class="h">סימון מיקום הנזילה</span><span class="e">Leak location marked</span></div></div>
+      <div class="gitem reveal" tabindex="0" data-i="13"><span class="gid"></span><img src="images/gallery/field-technician-pool.jpg" alt="Field technician on leak survey" loading="lazy"><div class="glabel"><span class="h">טכנאי בשטח — סקר נזילות</span><span class="e">Field technician — leak survey</span></div></div>
     </div>
     <div class="lbox" id="lbox" onclick="lboxClose(event)">
       <div class="lbox-inner" onclick="event.stopPropagation()">
@@ -871,7 +921,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
   <div class="container">
     <div class="students-wrap">
       <div class="students-info reveal">
-        <div class="stag h">לסטודנטים</div><div class="stag e">For Students</div>
+        <div class="section-meta"><span class="snum">07 / 09</span><span class="sep"></span><span class="stag h">לסטודנטים</span><span class="stag e">For Students</span></div>
         <h2 class="stitle h">הצטרפו לצוות —<br/>סטאז' בשטח</h2>
         <h2 class="stitle e">Join the Team —<br/>Field Internship</h2>
         <p class="ssub h">הכשרה מעשית מקצועית בתחום איתור נזילות ומיפוי תשתיות — ניסיון יקר ערך עם ציוד אמיתי בשטח.</p>
@@ -916,8 +966,8 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="coverage">
   <div class="container">
     <div class="cov-wrap">
-      <div class="cov-desc reveal">
-        <div class="stag" style="color:var(--teal-l);">Coverage</div>
+      <div class="cov-desc reveal section-head dark">
+        <div class="section-meta"><span class="snum">08 / 09</span><span class="sep"></span><span class="stag h">פריסה</span><span class="stag e">Coverage</span></div>
         <h2 class="stitle white h">פתח תקווה<br/>וכל הארץ</h2>
         <h2 class="stitle white e">Petah Tikva<br/>& All Israel</h2>
         <p class="ssub light h">בסיס הפעילות בפתח תקווה — מרכז הארץ. אך אנחנו מעניקים שירות מקצועי בכל ישראל, מאשקלון ועד מטולה.</p>
