@@ -27,7 +27,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Rubik:wght@400;500;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Rubik:wght@400;500;700&family=Barlow+Condensed:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
 
 <!-- Local Business Schema -->
 <script type="application/ld+json">
@@ -66,14 +66,18 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 :root{
-  --navy:#0a1628; --navy2:#0f2240; --blue:#1a5fb4; --teal:#1e90b0; --teal-l:#7dd4e8;
+  --navy:#0a1628; --navy2:#0f2240; --navy3:#06101e; --blue:#1a5fb4; --teal:#1e90b0; --teal-l:#7dd4e8;
   --yellow:#f5b800; --yellow-d:#d9a200; --green:#1a8c4e;
   --bg:#fff; --gray:#f5f8fc; --gray2:#e8edf5; --bdr:#d0dae8;
   --text:#0f1923; --muted:#5a6a7e; --muted-l:#92aec8;
   --danger:#e74c3c;
+  /* thermal-imaging accent stops (deep blue → cyan → amber → red) */
+  --th-1:#0a2855; --th-2:#1e90b0; --th-3:#7dd4e8; --th-4:#f5b800; --th-5:#e8593b;
+  --thermal:linear-gradient(90deg,var(--th-1) 0%,var(--th-2) 28%,var(--th-3) 50%,var(--th-4) 78%,var(--th-5) 100%);
   --font-he:"Assistant",system-ui,sans-serif;
   --font-en:"Rubik",system-ui,sans-serif;
   --font-d:"Barlow Condensed",system-ui,sans-serif;
+  --font-m:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --r:14px; --r-sm:8px;
   --shadow-sm:0 2px 8px rgba(13,27,46,.06);
   --shadow:0 8px 28px rgba(13,27,46,.1);
@@ -192,14 +196,27 @@ body.en .cbox-confirm{border-left:none;border-right:3px solid var(--teal);}
 /* ── SECTIONS ── */
 section{padding:5rem 1.5rem;}
 .container{max-width:1240px;margin:0 auto;}
-.stag{font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.6rem;display:inline-block;}
-.stitle{font-family:var(--font-d);font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:800;color:var(--navy);margin-bottom:.7rem;line-height:1.12;letter-spacing:-.5px;}
-.stitle.white{color:#fff;}
-.ssub{color:var(--muted);font-size:.95rem;line-height:1.75;max-width:560px;}
-.ssub.light{color:#9bbcd9;}
-.section-head{margin-bottom:2.2rem;}
+.section-head{margin-bottom:2.4rem;position:relative;padding-top:1.4rem;}
+.section-head::before{content:"";position:absolute;top:0;inset-inline-start:0;width:64px;height:2px;background:var(--thermal);opacity:.85;}
 .section-head.center{text-align:center;}
+.section-head.center::before{inset-inline-start:50%;transform:translateX(-50%);}
+body.en .section-head.center::before{transform:translateX(-50%);}
 .section-head.center .ssub{margin-left:auto;margin-right:auto;}
+.section-meta{display:flex;align-items:center;gap:.8rem;margin-bottom:.85rem;font-family:var(--font-m);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;}
+.section-head.center .section-meta{justify-content:center;}
+.snum{color:var(--muted);font-variant-numeric:tabular-nums;}
+.section-head.dark .snum{color:var(--muted-l);opacity:.75;}
+.section-meta .sep{width:18px;height:1px;background:currentColor;opacity:.35;display:inline-block;}
+/* Legacy + scoped variants: default block eyebrow outside section-meta, inline mono inside */
+.stag{font-family:var(--font-m);font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.65rem;display:inline-block;}
+.section-meta .stag{font-weight:600;font-size:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--teal);display:inline;margin-bottom:0;}
+.section-head.dark .stag,.section-head.dark .section-meta .stag{color:var(--teal-l);}
+.stitle{font-family:var(--font-d);font-size:clamp(2rem,4vw,2.95rem);font-weight:800;color:var(--navy);margin-bottom:.7rem;line-height:1.08;letter-spacing:-.7px;}
+.stitle.white{color:#fff;}
+.ssub{color:var(--muted);font-size:.96rem;line-height:1.75;max-width:560px;}
+.ssub.light{color:#9bbcd9;}
+/* mono readout helper */
+.mono{font-family:var(--font-m);font-variant-numeric:tabular-nums;letter-spacing:.02em;}
 
 /* ── SERVICES ── */
 #services{background:var(--gray);}
@@ -611,7 +628,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="services">
   <div class="container">
     <div class="section-head reveal">
-      <div class="stag h">השירותים שלנו</div><div class="stag e">Our Services</div>
+      <div class="section-meta"><span class="snum">01 / 09</span><span class="sep"></span><span class="stag h">השירותים שלנו</span><span class="stag e">Our Services</span></div>
       <h2 class="stitle h">פתרון לכל סוג נזילה</h2><h2 class="stitle e">Solution for Every Leak</h2>
       <p class="ssub h">אנו מתמחים במגוון רחב של בעיות תשתית — מנזילות מים סמויות ועד מיפוי צנרת מורכבת בבניינים מסחריים.</p>
       <p class="ssub e">We specialize in a wide range of infrastructure problems — from hidden water leaks to complex pipe mapping in commercial buildings.</p>
@@ -661,7 +678,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="process">
   <div class="container">
     <div class="section-head center reveal">
-      <div class="stag h">איך זה עובד</div><div class="stag e">How It Works</div>
+      <div class="section-meta"><span class="snum">02 / 09</span><span class="sep"></span><span class="stag h">איך זה עובד</span><span class="stag e">How It Works</span></div>
       <h2 class="stitle h">תהליך פשוט בארבעה שלבים</h2><h2 class="stitle e">Simple 4-Step Process</h2>
       <p class="ssub h">משיחת הטלפון הראשונה ועד דוח מסירה — תהליך שקוף, מהיר ויסודי.</p>
       <p class="ssub e">From the first phone call to the final report — a transparent, fast and thorough process.</p>
@@ -707,7 +724,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="testimonials">
   <div class="container">
     <div class="section-head center reveal">
-      <div class="stag h">לקוחות מספרים</div><div class="stag e">Client Stories</div>
+      <div class="section-meta"><span class="snum">04 / 09</span><span class="sep"></span><span class="stag h">לקוחות מספרים</span><span class="stag e">Client Stories</span></div>
       <h2 class="stitle h">מה הלקוחות שלנו אומרים</h2><h2 class="stitle e">What Our Clients Say</h2>
       <p class="ssub h">דירוג ממוצע של 4.9 כוכבים מ-127 ביקורות אמיתיות.</p>
       <p class="ssub e">Average rating of 4.9 stars from 127 verified reviews.</p>
@@ -742,7 +759,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="gallery">
   <div class="container">
     <div class="section-head reveal">
-      <div class="stag h">גלריה</div><div class="stag e">Gallery</div>
+      <div class="section-meta"><span class="snum">05 / 09</span><span class="sep"></span><span class="stag h">גלריה</span><span class="stag e">Gallery</span></div>
       <h2 class="stitle h">העבודות שלנו בשטח</h2><h2 class="stitle e">Our Work in the Field</h2>
       <p class="ssub h">דוגמאות מסקרי איתור נזילות, תרמוגרפיה ומיפוי תשתיות בפרויקטים מגוונים.</p>
       <p class="ssub e">Examples from leak detection surveys, thermography and infrastructure mapping projects.</p>
@@ -779,7 +796,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="faq">
   <div class="container">
     <div class="section-head center reveal">
-      <div class="stag h">שאלות נפוצות</div><div class="stag e">FAQ</div>
+      <div class="section-meta"><span class="snum">06 / 09</span><span class="sep"></span><span class="stag h">שאלות נפוצות</span><span class="stag e">FAQ</span></div>
       <h2 class="stitle h">תשובות לשאלות הנפוצות ביותר</h2><h2 class="stitle e">Answers to Common Questions</h2>
     </div>
     <div class="faq-list">
@@ -946,7 +963,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="contact">
   <div class="container" style="text-align:center;">
     <div class="section-head center reveal">
-      <div class="stag h">צור קשר</div><div class="stag e">Contact Us</div>
+      <div class="section-meta"><span class="snum">09 / 09</span><span class="sep"></span><span class="stag h">צור קשר</span><span class="stag e">Contact Us</span></div>
       <h2 class="stitle h">מדברים ישירות</h2><h2 class="stitle e">Get in Touch</h2>
       <p class="ssub h">צרו קשר בכל דרך שנוחה לכם — אנחנו זמינים 24/7.</p>
       <p class="ssub e">Reach out any way you prefer — we're available 24/7.</p>
