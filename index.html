@@ -212,8 +212,8 @@ h1.hero-h em::after{content:"";position:absolute;left:0;right:0;bottom:-4px;heig
 .hstat:nth-child(4) strong{color:#fff;}
 
 /* hero form */
-.hero-card{flex-shrink:0;width:340px;background:#fff;border-radius:16px;padding:2rem 1.85rem 1.85rem;box-shadow:var(--shadow-lg);position:relative;align-self:center;color:var(--text);overflow:hidden;}
-.hero-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--thermal);}
+.hero-card{flex-shrink:0;width:340px;background:#fff;border-radius:16px;padding:2rem 1.85rem 1.85rem;box-shadow:var(--shadow-lg);position:relative;align-self:center;color:var(--text);}
+.hero-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--thermal);border-radius:16px 16px 0 0;}
 .card-ribbon{position:absolute;top:-11px;right:1.4rem;background:var(--yellow);color:var(--navy);padding:.34rem .9rem;border-radius:999px;font-family:var(--font-m);font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 4px 12px rgba(245,184,0,.35);}
 body.en .card-ribbon{right:auto;left:1.4rem;}
 .card-title{font-family:var(--font-d);font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:.35rem;letter-spacing:-.01em;}
@@ -252,9 +252,6 @@ section{padding:5rem 1.5rem;}
 .section-meta::before{content:"";position:absolute;top:0;inset-inline-start:0;width:52px;height:1.5px;background:var(--thermal);opacity:.85;}
 .section-head.center .section-meta{justify-content:center;}
 .section-head.center .section-meta::before{inset-inline-start:50%;transform:translateX(-50%);}
-.section-meta .snum{color:var(--muted);font-variant-numeric:tabular-nums;}
-.section-head.dark .section-meta .snum{color:var(--muted-l);opacity:.75;}
-.section-meta .sep{width:18px;height:1px;background:currentColor;opacity:.35;display:inline-block;}
 /* Legacy + scoped variants: default block eyebrow outside section-meta, inline mono inside */
 .stag{font-family:var(--font-m);font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.65rem;display:inline-block;}
 .section-meta .stag{font-weight:600;font-size:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--teal);display:inline;margin-bottom:0;}
@@ -736,7 +733,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="services">
   <div class="container">
     <div class="section-head reveal">
-      <div class="section-meta"><span class="snum">01 / 09</span><span class="sep"></span><span class="stag h">השירותים שלנו</span><span class="stag e">Our Services</span></div>
+      <div class="section-meta"><span class="stag h">השירותים שלנו</span><span class="stag e">Our Services</span></div>
       <h2 class="stitle h">פתרון לכל סוג נזילה</h2><h2 class="stitle e">Solution for Every Leak</h2>
       <p class="ssub h">אנו מתמחים במגוון רחב של בעיות תשתית — מנזילות מים סמויות ועד מיפוי צנרת מורכבת בבניינים מסחריים.</p>
       <p class="ssub e">We specialize in a wide range of infrastructure problems — from hidden water leaks to complex pipe mapping in commercial buildings.</p>
@@ -792,7 +789,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="process">
   <div class="container">
     <div class="section-head center reveal">
-      <div class="section-meta"><span class="snum">02 / 09</span><span class="sep"></span><span class="stag h">איך זה עובד</span><span class="stag e">How It Works</span></div>
+      <div class="section-meta"><span class="stag h">איך זה עובד</span><span class="stag e">How It Works</span></div>
       <h2 class="stitle h">תהליך פשוט בארבעה שלבים</h2><h2 class="stitle e">Simple 4-Step Process</h2>
       <p class="ssub h">משיחת הטלפון הראשונה ועד דוח מסירה — תהליך שקוף, מהיר ויסודי.</p>
       <p class="ssub e">From the first phone call to the final report — a transparent, fast and thorough process.</p>
@@ -810,7 +807,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="why">
   <div class="container">
     <div class="section-head dark reveal">
-      <div class="section-meta"><span class="snum">03 / 09</span><span class="sep"></span><span class="stag h">למה אנחנו?</span><span class="stag e">Why Choose Us?</span></div>
+      <div class="section-meta"><span class="stag h">למה אנחנו?</span><span class="stag e">Why Choose Us?</span></div>
       <h2 class="stitle white h">מקצועיות ללא פשרות</h2><h2 class="stitle white e">Uncompromising Expertise</h2>
       <p class="ssub light h">10+ שנות ניסיון, אלפי קריאות שירות, ואלפי לקוחות מרוצים בכל הארץ.</p>
       <p class="ssub light e">10+ years of experience, thousands of service calls, and thousands of satisfied clients across Israel.</p>
@@ -840,7 +837,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="testimonials">
   <div class="container">
     <div class="section-head center reveal">
-      <div class="section-meta"><span class="snum">04 / 09</span><span class="sep"></span><span class="stag h">לקוחות מספרים</span><span class="stag e">Client Stories</span></div>
+      <div class="section-meta"><span class="stag h">לקוחות מספרים</span><span class="stag e">Client Stories</span></div>
       <h2 class="stitle h">מה הלקוחות שלנו אומרים</h2><h2 class="stitle e">What Our Clients Say</h2>
       <p class="ssub h">דירוג ממוצע של 4.9 כוכבים מ-127 ביקורות אמיתיות.</p>
       <p class="ssub e">Average rating of 4.9 stars from 127 verified reviews.</p>
@@ -875,7 +872,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="gallery">
   <div class="container">
     <div class="section-head reveal">
-      <div class="section-meta"><span class="snum">05 / 09</span><span class="sep"></span><span class="stag h">גלריה</span><span class="stag e">Gallery</span></div>
+      <div class="section-meta"><span class="stag h">גלריה</span><span class="stag e">Gallery</span></div>
       <h2 class="stitle h">העבודות שלנו בשטח</h2><h2 class="stitle e">Our Work in the Field</h2>
       <p class="ssub h">דוגמאות מסקרי איתור נזילות, תרמוגרפיה ומיפוי תשתיות בפרויקטים מגוונים.</p>
       <p class="ssub e">Examples from leak detection surveys, thermography and infrastructure mapping projects.</p>
@@ -912,7 +909,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="faq">
   <div class="container">
     <div class="section-head center reveal">
-      <div class="section-meta"><span class="snum">06 / 09</span><span class="sep"></span><span class="stag h">שאלות נפוצות</span><span class="stag e">FAQ</span></div>
+      <div class="section-meta"><span class="stag h">שאלות נפוצות</span><span class="stag e">FAQ</span></div>
       <h2 class="stitle h">תשובות לשאלות הנפוצות ביותר</h2><h2 class="stitle e">Answers to Common Questions</h2>
     </div>
     <div class="faq-list reveal-stagger">
@@ -949,7 +946,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
   <div class="container">
     <div class="students-wrap">
       <div class="students-info reveal">
-        <div class="section-meta"><span class="snum">07 / 09</span><span class="sep"></span><span class="stag h">לסטודנטים</span><span class="stag e">For Students</span></div>
+        <div class="section-meta"><span class="stag h">לסטודנטים</span><span class="stag e">For Students</span></div>
         <h2 class="stitle h">הצטרפו לצוות —<br/>סטאז' בשטח</h2>
         <h2 class="stitle e">Join the Team —<br/>Field Internship</h2>
         <p class="ssub h">הכשרה מעשית מקצועית בתחום איתור נזילות ומיפוי תשתיות — ניסיון יקר ערך עם ציוד אמיתי בשטח.</p>
@@ -995,7 +992,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
   <div class="container">
     <div class="cov-wrap">
       <div class="cov-desc reveal section-head dark">
-        <div class="section-meta"><span class="snum">08 / 09</span><span class="sep"></span><span class="stag h">פריסה</span><span class="stag e">Coverage</span></div>
+        <div class="section-meta"><span class="stag h">פריסה</span><span class="stag e">Coverage</span></div>
         <h2 class="stitle white h">פתח תקווה<br/>וכל הארץ</h2>
         <h2 class="stitle white e">Petah Tikva<br/>& All Israel</h2>
         <p class="ssub light h">בסיס הפעילות בפתח תקווה — מרכז הארץ. אך אנחנו מעניקים שירות מקצועי בכל ישראל, מאשקלון ועד מטולה.</p>
@@ -1079,7 +1076,7 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <section id="contact">
   <div class="container" style="text-align:center;">
     <div class="section-head center reveal">
-      <div class="section-meta"><span class="snum">09 / 09</span><span class="sep"></span><span class="stag h">צור קשר</span><span class="stag e">Contact Us</span></div>
+      <div class="section-meta"><span class="stag h">צור קשר</span><span class="stag e">Contact Us</span></div>
       <h2 class="stitle h">מדברים ישירות</h2><h2 class="stitle e">Get in Touch</h2>
       <p class="ssub h">צרו קשר בכל דרך שנוחה לכם — אנחנו זמינים 24/7.</p>
       <p class="ssub e">Reach out any way you prefer — we're available 24/7.</p>
