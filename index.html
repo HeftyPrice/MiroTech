@@ -243,7 +243,7 @@ body.en .cbox-confirm{border-left:none;border-right:3px solid var(--teal);}
 .fnote svg{width:11px;height:11px;fill:var(--green);}
 
 /* ── SECTIONS ── */
-section{padding:5rem 1.5rem;}
+section{padding:4rem 1.5rem;}
 .container{max-width:1240px;margin:0 auto;}
 .section-head{margin-bottom:2.4rem;}
 .section-head.center{text-align:center;}
@@ -265,7 +265,7 @@ section{padding:5rem 1.5rem;}
 
 /* ── SERVICES ── */
 #services{background:var(--gray);}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem;margin-top:2rem;}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2rem;}
 .scard{background:#fff;border:1.5px solid var(--bdr);border-radius:14px;padding:1.55rem 1.4rem 1.65rem;transition:var(--t);position:relative;overflow:hidden;}
 .scard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--thermal);transform:scaleX(0);transform-origin:right;transition:transform .45s ease;}
 body.en .scard::before{transform-origin:left;}
@@ -284,6 +284,7 @@ body.en .scard::before{transform-origin:left;}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2.4rem;position:relative;}
 .pgrid::before{content:"";position:absolute;top:34%;left:6%;right:6%;height:1px;background-image:repeating-linear-gradient(90deg,var(--bdr) 0,var(--bdr) 5px,transparent 5px,transparent 11px);z-index:0;}
 @media(max-width:760px){.pgrid::before{display:none;}}
+@media(max-width:680px){.sgrid{grid-template-columns:repeat(2,1fr);}}
 .pstep{background:var(--gray);border-radius:14px;padding:2rem 1.4rem 1.6rem;border:1.5px solid var(--gray2);position:relative;transition:var(--t);overflow:hidden;z-index:1;}
 .pstep:hover{border-color:var(--teal);background:#fff;box-shadow:var(--shadow);transform:translateY(-3px);}
 .pghost{position:absolute;top:-1.2rem;inset-inline-end:-.4rem;font-family:var(--font-d);font-weight:800;font-size:6.6rem;line-height:1;color:var(--bdr);opacity:.55;pointer-events:none;font-variant-numeric:tabular-nums;letter-spacing:-.05em;transition:var(--t);}
@@ -345,6 +346,13 @@ body.en .tquote{left:1.2rem;}
 .tavatar{width:40px;height:40px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-m);font-weight:600;font-size:.78rem;letter-spacing:-.02em;border:1px solid rgba(125,212,232,.28);}
 .tname{font-weight:700;color:var(--navy);font-size:.9rem;letter-spacing:-.01em;}
 .trole{font-size:.72rem;color:var(--muted);font-family:var(--font-m);letter-spacing:.04em;}
+
+/* ── RATING STRIP ── */
+.tmore{display:flex;align-items:center;justify-content:center;gap:.85rem;margin-top:1.8rem;padding:1rem 1.5rem;background:rgba(30,144,176,.05);border-radius:10px;border:1px solid rgba(30,144,176,.14);}
+.tmore-stars{color:var(--yellow);font-size:1.1rem;letter-spacing:.12em;}
+.tmore-score{font-family:var(--font-m);font-weight:700;color:var(--navy);font-size:.98rem;}
+.tmore-text{font-size:.82rem;color:var(--muted);}
+.tmore-sep{width:1px;height:18px;background:var(--bdr);}
 
 /* ── COVERAGE ── */
 #coverage{background:linear-gradient(180deg,var(--navy) 0%, #0d2745 100%);position:relative;overflow:hidden;}
@@ -864,6 +872,12 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
         <p class="ttext e">"As a building HOA, we work with Elchanan regularly. Always arrives quickly, always finds it, always at a fair price."</p>
         <div class="tauth"><div class="tavatar">יל</div><div><div class="tname"><span class="h">יוסי לוי</span><span class="e">Yossi L.</span></div><div class="trole"><span class="h">ועד בית, תל אביב</span><span class="e">HOA chair, Tel Aviv</span></div></div></div>
       </div>
+    </div>
+    <div class="tmore reveal">
+      <span class="tmore-stars">★★★★★</span>
+      <span class="tmore-score">4.9</span>
+      <span class="tmore-sep"></span>
+      <span class="tmore-text"><span class="h">127 ביקורות מאומתות בגוגל</span><span class="e">127 verified Google reviews</span></span>
     </div>
   </div>
 </section>
