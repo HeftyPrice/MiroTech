@@ -139,30 +139,49 @@ body.en .mobile-close{right:auto;left:1.5rem;}
 .mobile-lang{background:transparent;border:2px solid rgba(255,255,255,.3);color:#fff;padding:.55rem 1.3rem;border-radius:7px;font-size:.92rem;}
 
 /* ── HERO ── */
-.hero{min-height:92vh;background:linear-gradient(140deg,#060f1d 0%,#0f2240 50%,#0a1628 100%);position:relative;display:flex;align-items:center;padding:5rem 1.5rem 4rem;overflow:hidden;}
+.hero{min-height:92vh;background:radial-gradient(120% 80% at 70% 0%,#102b52 0%,#0a1c36 45%,#06101e 100%);position:relative;display:flex;align-items:center;padding:5rem 1.5rem 4rem;overflow:hidden;}
 .hero-grid-bg{position:absolute;inset:0;background-image:
-  repeating-linear-gradient(0deg,transparent,transparent 49px,rgba(30,144,176,.06) 49px,rgba(30,144,176,.06) 50px),
-  repeating-linear-gradient(90deg,transparent,transparent 49px,rgba(30,144,176,.06) 49px,rgba(30,144,176,.06) 50px);}
+  repeating-linear-gradient(0deg,transparent,transparent 63px,rgba(125,212,232,.05) 63px,rgba(125,212,232,.05) 64px),
+  repeating-linear-gradient(90deg,transparent,transparent 63px,rgba(125,212,232,.05) 63px,rgba(125,212,232,.05) 64px);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%);
+          mask-image:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%);
+}
+.hero-scan{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(125,212,232,.025) 0,rgba(125,212,232,.025) 1px,transparent 1px,transparent 3px);pointer-events:none;mix-blend-mode:overlay;opacity:.7;}
 .hero-glow{position:absolute;top:-10%;left:30%;width:60vmax;height:60vmax;background:radial-gradient(circle,rgba(26,95,180,.22) 0%,transparent 60%);pointer-events:none;}
-.hero-glow-2{position:absolute;bottom:-20%;right:-10%;width:40vmax;height:40vmax;background:radial-gradient(circle,rgba(245,184,0,.08) 0%,transparent 60%);pointer-events:none;}
+.hero-glow-2{position:absolute;bottom:-25%;right:-12%;width:48vmax;height:48vmax;background:radial-gradient(circle,rgba(245,184,0,.09) 0%,transparent 62%);pointer-events:none;}
+.hero-wave{position:absolute;left:-2%;right:-2%;bottom:-12px;width:104%;height:260px;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 75%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 75%,transparent 100%);}
+.hero-wave-g{animation:hwScroll 7.5s linear infinite;}
+@keyframes hwScroll{from{transform:translate3d(0,0,0);}to{transform:translate3d(-116px,0,0);}}
 .hero-inner{position:relative;z-index:2;display:flex;align-items:flex-start;gap:2.5rem;width:100%;max-width:1240px;margin:0 auto;flex-wrap:wrap;}
 .hero-text{flex:1;min-width:280px;color:#fff;}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,184,0,.12);border:1px solid rgba(245,184,0,.34);color:var(--yellow);padding:.4rem 1rem;border-radius:999px;font-size:.76rem;font-weight:700;margin-bottom:1.4rem;}
-.hero-badge svg{width:13px;height:13px;fill:currentColor;}
-h1.hero-h{font-family:var(--font-d);font-size:clamp(2.4rem,5.8vw,4.5rem);font-weight:800;line-height:1.05;margin-bottom:1.1rem;letter-spacing:-.5px;}
+.hero-badge{display:inline-flex;align-items:center;gap:.65rem;background:rgba(13,30,55,.55);border:1px solid rgba(125,212,232,.28);color:#cfe6f4;padding:.45rem 1rem;border-radius:999px;font-family:var(--font-m);font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.4rem;backdrop-filter:blur(6px);}
+.hero-badge .hb-dot{width:7px;height:7px;border-radius:50%;background:#4de87a;box-shadow:0 0 8px #4de87a,0 0 0 4px rgba(77,232,122,.18);position:relative;}
+.hero-badge .hb-dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;background:#4de87a;opacity:.45;animation:hbPulse 2.4s ease-out infinite;}
+@keyframes hbPulse{0%{transform:scale(.6);opacity:.55;}100%{transform:scale(1.9);opacity:0;}}
+.hero-badge .hb-sep{width:1px;height:11px;background:rgba(125,212,232,.35);}
+h1.hero-h{font-family:var(--font-d);font-size:clamp(2.5rem,6vw,4.7rem);font-weight:800;line-height:1.02;margin-bottom:1.1rem;letter-spacing:-.6px;}
 h1.hero-h em{color:var(--yellow);font-style:normal;position:relative;}
-h1.hero-h em::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3px;background:var(--yellow);opacity:.4;border-radius:2px;}
+h1.hero-h em::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3px;background:linear-gradient(90deg,var(--th-2) 0%,var(--th-3) 30%,var(--yellow) 70%,var(--th-5) 100%);opacity:.7;border-radius:2px;}
 .hero-p{font-size:1rem;line-height:1.75;color:#9bbcd9;margin-bottom:2rem;max-width:480px;}
 .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;}
-.btn-y{background:var(--yellow);color:var(--navy);padding:.92rem 1.9rem;border-radius:8px;font-weight:800;font-size:.95rem;transition:var(--t);display:inline-flex;align-items:center;gap:.45rem;}
+.btn-y{background:var(--yellow);color:var(--navy);padding:.92rem 1.9rem;border-radius:8px;font-weight:800;font-size:.95rem;transition:var(--t);display:inline-flex;align-items:center;gap:.45rem;position:relative;overflow:hidden;}
+.btn-y::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-110%);transition:transform .55s ease;}
 .btn-y:hover{background:var(--yellow-d);transform:translateY(-2px);box-shadow:0 8px 22px rgba(245,184,0,.3);}
-.btn-y svg{width:15px;height:15px;fill:currentColor;}
+.btn-y:hover::after{transform:translateX(110%);}
+.btn-y svg{width:15px;height:15px;fill:currentColor;position:relative;z-index:1;}
+.btn-y span{position:relative;z-index:1;}
 .btn-ow{background:transparent;border:2px solid rgba(255,255,255,.25);color:#fff;padding:.85rem 1.8rem;border-radius:8px;font-weight:600;font-size:.95rem;transition:var(--t);display:inline-flex;align-items:center;gap:.45rem;}
-.btn-ow:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+.btn-ow:hover{border-color:var(--th-3);background:rgba(125,212,232,.06);color:var(--th-3);}
 .btn-ow svg{width:15px;height:15px;fill:currentColor;}
-.hero-stats{display:flex;gap:2rem;margin-top:2.6rem;flex-wrap:wrap;}
-.hstat{color:#9bbcd9;font-size:.83rem;line-height:1.3;}
-.hstat strong{display:block;color:#fff;font-family:var(--font-d);font-size:1.6rem;font-weight:800;margin-bottom:.15rem;}
+.hero-stats{display:flex;gap:0;margin-top:2.6rem;flex-wrap:wrap;padding:1.3rem 0 .2rem;border-top:1px solid rgba(125,212,232,.18);position:relative;}
+.hero-stats::before{content:"";position:absolute;top:-1px;inset-inline-start:0;width:84px;height:1px;background:var(--thermal);}
+.hstat{flex:1;min-width:120px;padding:0 1.3rem;color:#9bbcd9;font-size:.74rem;line-height:1.4;border-inline-start:1px solid rgba(125,212,232,.12);position:relative;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.hstat:first-child{border-inline-start:none;padding-inline-start:0;}
+.hstat strong{display:block;color:#fff;font-family:var(--font-m);font-size:1.95rem;font-weight:500;letter-spacing:-.03em;margin-bottom:.25rem;font-variant-numeric:tabular-nums;line-height:1;}
+.hstat:nth-child(1) strong{color:#fff;}
+.hstat:nth-child(2) strong{color:var(--th-3);}
+.hstat:nth-child(3) strong{color:var(--th-4);}
+.hstat:nth-child(4) strong{color:#fff;}
 
 /* hero form */
 .hero-card{flex-shrink:0;width:340px;background:#fff;border-radius:16px;padding:1.85rem;box-shadow:var(--shadow-lg);position:relative;align-self:center;color:var(--text);}
@@ -467,8 +486,12 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
   .hero-text{width:100%;}
   h1.hero-h{font-size:2.4rem;}
   .hero-p{font-size:.92rem;max-width:100%;}
-  .hero-stats{gap:1.4rem;margin-top:2rem;}
+  .hero-stats{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem 0;padding:1.1rem 0 .2rem;}
+  .hstat{padding:0 1rem;border-inline-start:1px solid rgba(125,212,232,.12);}
+  .hstat:nth-child(odd){padding-inline-start:0;border-inline-start:none;}
+  .hstat strong{font-size:1.7rem;}
   .hero-card{width:100%;max-width:100%;}
+  .hero-wave{height:200px;opacity:.55;}
   .fg{grid-template-columns:1fr;}
 
   section{padding:3.5rem 1rem;}
@@ -567,11 +590,26 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-grid-bg"></div>
+  <div class="hero-scan"></div>
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
+  <svg class="hero-wave" viewBox="0 0 1392 90" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="hwG" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#1e90b0" stop-opacity="0"/>
+        <stop offset="18%" stop-color="#1e90b0" stop-opacity=".55"/>
+        <stop offset="48%" stop-color="#7dd4e8" stop-opacity=".75"/>
+        <stop offset="72%" stop-color="#f5b800" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#e8593b" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <g class="hero-wave-g">
+      <path d="M -116 82 L -93 8 L -70 53 L -58 30 L -46 53 L -23 8 L 0 82 L 23 8 L 46 53 L 58 30 L 70 53 L 93 8 L 116 82 L 139 8 L 162 53 L 174 30 L 186 53 L 209 8 L 232 82 L 255 8 L 278 53 L 290 30 L 302 53 L 325 8 L 348 82 L 371 8 L 394 53 L 406 30 L 418 53 L 441 8 L 464 82 L 487 8 L 510 53 L 522 30 L 534 53 L 557 8 L 580 82 L 603 8 L 626 53 L 638 30 L 650 53 L 673 8 L 696 82 L 719 8 L 742 53 L 754 30 L 766 53 L 789 8 L 812 82 L 835 8 L 858 53 L 870 30 L 882 53 L 905 8 L 928 82 L 951 8 L 974 53 L 986 30 L 998 53 L 1021 8 L 1044 82 L 1067 8 L 1090 53 L 1102 30 L 1114 53 L 1137 8 L 1160 82 L 1183 8 L 1206 53 L 1218 30 L 1230 53 L 1253 8 L 1276 82 L 1299 8 L 1322 53 L 1334 30 L 1346 53 L 1369 8 L 1392 82" stroke="url(#hwG)" stroke-width="1.4" fill="none" stroke-linejoin="miter" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-badge"><svg viewBox="0 0 24 24"><path d="M12 2 C8 6 6 10 6 13 a6 6 0 0 0 12 0 C18 10 16 6 12 2z"/></svg><span class="h">פתח תקווה • שירות בכל הארץ • 24/7</span><span class="e">Petah Tikva • Nationwide • 24/7</span></div>
+      <div class="hero-badge"><span class="hb-dot"></span><span class="h">איתור פעיל • פתח תקווה</span><span class="e">Live detection • Petah Tikva</span><span class="hb-sep"></span><span>24/7</span></div>
       <h1 class="hero-h h">איתור נזילות<br/><em>מהיר ומדויק</em></h1>
       <h1 class="hero-h e">Leak Detection<br/><em>Fast & Precise</em></h1>
       <p class="hero-p h">בעיית נזילה? אנו מגיעים עם ציוד אקוסטי ותרמוגרפי מתקדם ומאתרים את המקור המדויק — ללא הריסה, ללא ניחושים, ובדוח כתוב.</p>
