@@ -550,6 +550,8 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
   nav{padding:.65rem 1rem;}
   .nav-links,.nav-end .btn-nav{display:none;}
   .hamburger{display:flex;}
+  .logo-wrap{min-width:0;flex-shrink:1;}
+  .nav-end{flex-shrink:0;}
   .logo-mark{height:38px;}
   .logo-mark svg{height:38px;}
   .logo-text .lname{font-size:.95rem;}
@@ -585,6 +587,9 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
   h1.hero-h{font-size:2rem;}
   .hero-stats{gap:1rem;}
   .logo-text .lsub{display:none;}
+}
+@media(max-width:360px){
+  .logo-text{display:none;}
 }
 
 @media(prefers-reduced-motion:reduce){
