@@ -586,10 +586,20 @@ body.en span.e,body.en em.e,body.en strong.e{display:inline;}
   .sgrid2{grid-template-columns:1fr 1fr;}
   h1.hero-h{font-size:2rem;}
   .hero-stats{gap:1rem;}
-  .logo-text .lsub{display:none;}
+  .logo-text .lsub.h,.logo-text .lsub.e{display:none;}
+  .logo-mark,.logo-mark svg{height:34px;}
+  .logo-text .lname{font-size:.86rem;}
+  .lang-btn{padding:.3rem .55rem;font-size:.68rem;}
+  nav{padding:.6rem .9rem;}
+  .logo-wrap{gap:.5rem;}
 }
-@media(max-width:360px){
-  .logo-text{display:none;}
+@media(max-width:380px){
+  .logo-mark,.logo-mark svg{height:30px;}
+  .logo-text .lname{font-size:.78rem;letter-spacing:-.02em;}
+  .lang-btn{padding:.26rem .45rem;font-size:.62rem;letter-spacing:.04em;}
+  nav{padding:.55rem .75rem;}
+  .hamburger{padding:.3rem;}
+  .nav-end{gap:.4rem;}
 }
 
 @media(prefers-reduced-motion:reduce){
